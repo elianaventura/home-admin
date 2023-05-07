@@ -2,7 +2,7 @@
 export default function Users() {
   return (
     <>
-      <main>
+      <main className="users-class">
         <div>
           USERS
         </div>
