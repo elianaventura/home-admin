@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default async function TestComponent ({ show }) {
+export default function TestComponent ({ show }) {
   const [toShow, setToShow] = useState(show);
 
   async function changeData() {
@@ -11,14 +11,10 @@ export default async function TestComponent ({ show }) {
     setToShow(newDataJson[0].name.common);
   }
 
-  function change() {
-    setToShow('uruguay');
-  }
-
   return(
     <div>
       TEST COMPONENT {toShow}
-      <button onClick={change}>Change</button>
+      <button onClick={changeData}>Change</button>
     </div>
   );
 };
