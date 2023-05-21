@@ -1,11 +1,11 @@
 import usersClass from './users.module.scss';
 
-export default function Users() {
+export default function Users({ params }) {
   return (
     <>
       <main className={usersClass['users-class-2']}>
         <div>
-          USERS
+          USER {params.id}
         </div>
       </main>
     </>
