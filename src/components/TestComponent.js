@@ -6,7 +6,7 @@ function randomIntFromInterval(min, max) { // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-export default function TestComponent ({ show }) {
+export default function TestComponent ({ show, param }) {
   const [toShow, setToShow] = useState(show);
 
   async function changeData() {
@@ -17,7 +17,7 @@ export default function TestComponent ({ show }) {
 
   return(
     <div>
-      TEST COMPONENT {toShow}
+      TEST COMPONENT {toShow} {param}
       <button onClick={changeData}>Change</button>
     </div>
   );

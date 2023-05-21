@@ -7,14 +7,14 @@ async function getData() {
   return jsonData;
 };
 
-export default async function Home() {
+export default async function Home({ searchParams }) {
   const data = await getData();
   return (
     <>
       <main className={styles.main}>
         <div className={styles.description}>
           INITIAL PAGE
-          <TestComponent show={data[0].name.common} />
+          <TestComponent show={data[0].name.common} param={searchParams?.param} />
         </div>
       </main>
     </>
