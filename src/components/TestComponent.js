@@ -15,10 +15,17 @@ export default function TestComponent ({ show }) {
     setToShow(newDataJson[randomIntFromInterval(0, 20)].name.common);
   }
 
+  async function callHello() {
+    const data = await fetch('/api/hello');
+    const dataJson = await data.json();
+    console.log(JSON.stringify(dataJson));
+  }
+
   return(
     <div>
       TEST COMPONENT {toShow}
       <button onClick={changeData}>Change</button>
+      <button onClick={callHello}>Call Hello</button>
     </div>
   );
 };
