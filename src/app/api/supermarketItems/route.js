@@ -36,3 +36,19 @@ export async function POST(request) {
  
   return NextResponse.json({ data });
 }
+
+export async function PUT(request) {
+  const req = await(request.json());
+  const url = `http://localhost:4000/supermarketItems/${req.id}`
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      // 'API-Key': process.env.DATA_API_KEY,
+    },
+    body: JSON.stringify(req),
+  });
+  const data = await res.json();
+ 
+  return NextResponse.json({ data });
+}
