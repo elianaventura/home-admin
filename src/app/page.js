@@ -1,6 +1,4 @@
 import styles from './page.module.css';
-import TestComponent from '@/components/TestComponent';
-import Accordion from '@/components/Accordion';
 import Component from '@/components/factory/factory-from';
 
 const DEFAULT_PAGE = 'supermarketItems';
