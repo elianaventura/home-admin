@@ -1,0 +1,435 @@
+{
+	"components": [
+		{
+			"type": "MENU",
+			"title": "Home Admin",
+			"tools": [
+				{
+					"type": "NOTIFICATIONS",
+					"badge_quantity": 10,
+					"list": [
+						{
+							"text": "Probablemente se esté acabando el item 'Lechuga'",
+							"action": {
+								"type": "focus",
+								"vertical": "SUPPLIES",
+								"tab": "SUPPLIES_ITEMS",
+								"item": "IT01"
+							}
+						},
+						{
+							"text": "Te toca hacer la tarea 'Lavar los platos'",
+							"action": {
+								"type": "focus",
+								"vertical": "HOME_TASKS",
+								"tab": "TASKS",
+								"item": "IT05"
+							}
+						}
+					]
+				},
+				{
+					"type": "ACCOUNT",
+					"icon": {
+						"id": "LOGIN_ICON",
+						"color": "#fffaaa"
+					},
+					"options": [
+						{
+							"type": "LOGIN",
+							"form": {
+								"title": "Ingresa a tu cuenta",
+								"fields": [
+									{
+										"type": "USER_NAME",
+										"min_chars": 5,
+										"max_chars": 10
+									},
+									{
+										"type": "PASSWORD",
+										"min_chars": 5,
+										"max_chars": 10
+									}
+								]
+							}
+						}
+					]					
+				}
+			]
+		},
+		{
+			"type": "VERTICALS",
+			"options": [
+				{
+					"type": "SUPPLIES",
+					"id": "SUPPLIES",
+					"title": "Compras",
+					"icon": {
+						"id": "BUYING_CAR_ICON",
+						"color": "#fffaaa"
+					}
+				},
+				{
+					"type": "CLOTHES",
+					"id": "CLOTHES",
+					"title": "Ropa",
+					"icon": {
+						"id": "CLOTHES_ICON",
+						"color": "#fffaaa"
+					}
+				},
+				{
+					"type": "HOME_TASKS",
+					"id": "HOME_TASKS",
+					"title": "Tareas de la casas",
+					"icon": {
+						"id": "CLEANING_ICON",
+						"color": "#fffaaa"
+					}
+				}
+			]
+		},
+		{
+			"type": "CONTENT",
+			"vertical_id": "SUPPLIES",
+			"tabs": [
+				{
+					"id": "SUPPLIES_ITEMS",
+					"title": "Items",
+					"items": [
+						{
+							"type": "SUPPLIES_ITEM",
+							"id": "IT01",
+							"title": "Lechuga",
+							"expanded": "true",
+							"input_data_attributes": [
+								{
+									"type": "priority",
+									"number": 4
+								},
+								{
+									"type": "price_per_unit",
+									"title": "Precio de referencia",
+									"price": {
+										"amount": 80,
+										"currencies": [
+											{
+												"id": "ARS",
+												"selected": true
+											},
+											{
+												"id": "USD"
+											}
+										]
+									},
+									"units": [
+										{
+											"id": "KG",
+											"selected": true,
+											"display": {
+												"singular": "kg",
+												"plural": "kg"
+											}
+										},
+										{
+											"id": "UNIT",
+											"display": {
+												"singular": "unidad",
+												"plural": "unidades"
+											}
+										}
+									]
+								},
+								{
+									"type": "consumption_by_time",
+									"time_units": [
+										{
+											"id": "week",
+											"display": "semana",
+											"selected": true
+										},
+										{
+											"id": "week",
+											"display": "día"
+										},
+										{
+											"id": "month",
+											"display": "mes"
+										}
+									],
+									"consuption": {
+										"amount": 0.25,
+										"units": [
+											{
+												"id": "KG",
+												"selected": true,
+												"display": {
+													"singular": "kg",
+													"plural": "kg"
+												}
+											},
+											{
+												"id": "UNIT",
+												"display": {
+													"singular": "unidad",
+													"plural": "unidades"
+												}
+											}
+										]
+									}
+								},
+								{
+									"type": "stock",
+									"amount": 0.0,
+									"units": [
+										{
+											"id": "KG",
+											"selected": true,
+											"display": {
+												"singular": "kg",
+												"plural": "kg"
+											}
+										},
+										{
+											"id": "UNIT",
+											"display": {
+												"singular": "unidad",
+												"plural": "unidades"
+											}
+										}
+									]
+								},
+								{
+									"type": "shopping_places",
+									"places_list": [
+										{
+											"id": "PL01",
+											"name": "Coto",
+											"web_site": null,
+											"address": {
+												"verbose": "Av. San Juan 1234, Capital Federal",
+												"coordinates": {
+													"lat": -34.615387,
+													"long": -58.383117
+												}
+											},
+											"item_price": {
+												"amount": 100,
+												"currencies": [
+													{
+														"id": "ARS",
+														"selected": true
+													},
+													{
+														"id": "USD"
+													}
+												]
+											},
+											"available_days": [
+												{
+													"id": "MON",
+													"display": "LUN"
+												},
+												{
+													"id": "WED",
+													"display": "MIE"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "SUPPLIES_ITEM",
+							"id": "IT02",
+							"title": "Leche",
+							"expanded": "false",
+							"input_data_attributes": [
+								{
+									"type": "priority",
+									"number": 5
+								},
+								{
+									"type": "price_per_unit",
+									"title": "Precio de referencia",
+									"price": {
+										"amount": 200,
+										"currencies": [
+											{
+												"id": "ARS",
+												"selected": true
+											},
+											{
+												"id": "USD"
+											}
+										]
+									},
+									"units": [
+										{
+											"id": "KG",
+											"display": {
+												"singular": "kg",
+												"plural": "kg"
+											}
+										},
+										{
+											"id": "UNIT",
+											"selected": true,
+											"display": {
+												"singular": "unidad",
+												"plural": "unidades"
+											}
+										}
+									]
+								},
+								{
+									"type": "consumption_by_time",
+									"time_units": [
+										{
+											"id": "week",
+											"display": "semana",
+											"selected": true
+										},
+										{
+											"id": "week",
+											"display": "día"
+										},
+										{
+											"id": "month",
+											"display": "mes"
+										}
+									],
+									"consuption": {
+										"amount": 1,
+										"units": [
+											{
+												"id": "KG",
+												"display": {
+													"singular": "kg",
+													"plural": "kg"
+												}
+											},
+											{
+												"id": "UNIT",
+												"selected": true,
+												"display": {
+													"singular": "unidad",
+													"plural": "unidades"
+												}
+											}
+										]
+									}
+								},
+								{
+									"type": "stock",
+									"amount": 3,
+									"units": [
+										{
+											"id": "KG",
+											"display": {
+												"singular": "kg",
+												"plural": "kg"
+											}
+										},
+										{
+											"id": "UNIT",
+											"selected": true,
+											"display": {
+												"singular": "unidad",
+												"plural": "unidades"
+											}
+										}
+									],
+									"stock_details": {
+										"columns": [
+											{
+												"id": "id",
+												"display": "ID"
+											},
+											{
+												"id": "expiration_date",
+												"display": "Fecha de Vencimiento"
+											},
+											{
+												"id": "brand",
+												"display": "Marca"
+											}
+										],
+										"items": [
+											{
+												"id": "IT1_U1",
+												"expiration_date": "22-04-2023",
+												"brand": {
+													"id": "BR01",
+													"name": "La Serenisima"
+												}
+											}
+										]
+									}
+								},
+								{
+									"type": "shopping_places",
+									"places_list": [
+										{
+											"id": "PL01",
+											"name": "Coto",
+											"web_site": null,
+											"address": {
+												"verbose": "Av. San Juan 1234, Capital Federal",
+												"coordinates": {
+													"lat": -34.615387,
+													"long": -58.383117
+												}
+											},
+											"item_price": {
+												"amount": 100,
+												"currencies": [
+													{
+														"id": "ARS",
+														"selected": true
+													},
+													{
+														"id": "USD"
+													}
+												]
+											},
+											"available_days": [
+												{
+													"id": "MON",
+													"display": "LUN"
+												},
+												{
+													"id": "WED",
+													"display": "MIE"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "SUPPLIES_REPORT",
+					"title": "Reporte",
+					"components": [
+						{
+							"id": "shopping_recommendation",
+							"display": "Compras recomendadas"
+						},
+						{
+							"id": "price_variation",
+							"display": "Variación de precios"
+						},
+						{
+							"id": "products_details",
+							"display": "Detalle de productos"
+						}
+					]
+				}
+			]
+		}
+	]
+}
