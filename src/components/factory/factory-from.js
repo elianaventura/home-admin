@@ -1,5 +1,4 @@
 import React from 'react';
-import sources from './sources';
 
 const componentFactoryFrom = function(sources) {
   function Component(props) {
@@ -13,4 +12,4 @@ const componentFactoryFrom = function(sources) {
   return Component;
 };
 
-export default componentFactoryFrom(sources);
+export default componentFactoryFrom;

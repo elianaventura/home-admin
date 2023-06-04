@@ -1,5 +1,5 @@
-import Menu from '../menu';
-import Verticals from '../verticals';
+import Menu from '../../menu';
+import Verticals from '../../verticals';
 
 const sources = {
   'MENU': Menu,
@@ -7,4 +7,3 @@ const sources = {
 };
 
 export default sources;
-

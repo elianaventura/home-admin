@@ -1,5 +1,8 @@
 import styles from './page.module.css';
-import Component from '@/components/factory/factory-from';
+import componentFactoryFrom from '@/components/factory/factory-from';
+import components from '../components/factory/initial-page/components';
+
+const Component = componentFactoryFrom(components);
 
 const DEFAULT_PAGE = 'supermarketItems';
 
