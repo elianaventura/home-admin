@@ -1,22 +1,26 @@
 import styles from './page.module.css';
-import TestComponent from '@/components/TestComponent';
-import Accordion from '@/components/Accordion';
+import componentFactoryFrom from '@/components/factory/factory-from';
+import components from '../components/factory/initial-page/components';
 
-async function getData(country) {
-  const data = await fetch(`https://restcountries.com/v3.1/name/${country}`, { cache: 'no-store' });
+const Component = componentFactoryFrom(components);
+
+const DEFAULT_PAGE = 'supermarketItems';
+
+async function getData(page) {
+  const pageToFetch = page || DEFAULT_PAGE;
+  const data = await fetch(`http://localhost:4000/initialPage/${pageToFetch}`, { cache: 'no-store' });
   const jsonData = await data.json();
   return jsonData;
 };
 
 export default async function Home({ searchParams }) {
-  const data = await getData(searchParams.country);
+  const data = await getData(searchParams.page);
   return (
     <>
       <main className={styles.main}>
         <div className={styles.description}>
           INITIAL PAGE
-          <TestComponent show={data[0].name.common} />
-          <Accordion />
+          {data.components.map((componentProps, index) => <Component key={index} {...componentProps} />)}
         </div>
       </main>
     </>
