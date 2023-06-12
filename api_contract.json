@@ -6,6 +6,7 @@
 			"tools": [
 				{
 					"type": "NOTIFICATIONS",
+					"title": "Notificaciones",
 					"badge_quantity": 10,
 					"list": [
 						{
@@ -30,6 +31,7 @@
 				},
 				{
 					"type": "ACCOUNT",
+					"title": "Cuenta",
 					"icon": {
 						"id": "LOGIN_ICON",
 						"color": "#fffaaa"
@@ -66,7 +68,10 @@
 					"title": "Compras",
 					"icon": {
 						"id": "BUYING_CAR_ICON",
-						"color": "#fffaaa"
+						"color": "#fffaaa",
+						"style": {
+							"color": "#5f5ac7"
+						}
 					}
 				},
 				{
@@ -75,7 +80,9 @@
 					"title": "Ropa",
 					"icon": {
 						"id": "CLOTHES_ICON",
-						"color": "#fffaaa"
+						"style": {
+							"color": "#5f5ac7"
+						}
 					}
 				},
 				{
@@ -84,7 +91,20 @@
 					"title": "Tareas de la casas",
 					"icon": {
 						"id": "CLEANING_ICON",
-						"color": "#fffaaa"
+						"style": {
+							"color": "#5f5ac7"
+						}
+					}
+				},
+				{
+					"type": "COUPLE_GOALS",
+					"id": "COUPLE_GOALS",
+					"title": "Tareas de pareja",
+					"icon": {
+						"id": "LOVE_ICON",
+						"style": {
+							"color": "#5f5ac7"
+						}
 					}
 				}
 			]
