@@ -18,8 +18,7 @@ export default async function Home({ searchParams }) {
   return (
     <>
       <main className={styles.main}>
-        <div className={styles.description}>
-          INITIAL PAGE
+        <div className={styles.content}>
           {data.components.map((componentProps, index) => <Component key={index} {...componentProps} />)}
         </div>
       </main>
