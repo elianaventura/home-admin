@@ -7,9 +7,9 @@
 }
 
 .content {
-  display: inherit;
+  display: flex;
+  flex-direction: column;
   justify-content: inherit;
-  align-items: inherit;
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;

@@ -5,7 +5,7 @@ import verticalIconComponents from '../factory/vertical-icons/components';
 
 const renderOption = function(IconComponent, { id, type, title, icon }, onSelectVertical, index) {
   return (
-    <li className="vertical" key={index} onClick={onSelectVertical(id)} arial-aria-label={title}>
+    <li className="vertical" key={index} onClick={onSelectVertical(id)} aria-label={title}>
       <IconComponent type={type} {...icon} />
     </li>
   ); 
