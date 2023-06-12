@@ -3,11 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
 }
 
-.description {
+.content {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
@@ -18,14 +17,14 @@
   font-family: var(--font-mono);
 }
 
-.description a {
+.content a {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
 
-.description p {
+.content p {
   position: relative;
   margin: 0;
   padding: 1rem;
@@ -153,23 +152,23 @@
     height: 300px;
   }
 
-  .description {
+  .content {
     font-size: 0.8rem;
   }
 
-  .description a {
+  .content a {
     padding: 1rem;
   }
 
-  .description p,
-  .description div {
+  .content p,
+  .content div {
     display: flex;
     justify-content: center;
     position: fixed;
     width: 100%;
   }
 
-  .description p {
+  .content p {
     align-items: center;
     inset: 0 0 auto;
     padding: 2rem 1rem 1.4rem;
@@ -185,7 +184,7 @@
     backdrop-filter: blur(24px);
   }
 
-  .description div {
+  .content div {
     align-items: flex-end;
     inset: auto 0 0;
     padding: 2rem;
