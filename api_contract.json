@@ -111,7 +111,9 @@
 		},
 		{
 			"type": "CONTENT",
+			"title": "Mis compras",
 			"vertical_id": "SUPPLIES",
+			"selected_tab": 0,
 			"tabs": [
 				{
 					"id": "SUPPLIES_ITEMS",
