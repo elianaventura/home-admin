@@ -8,18 +8,18 @@ import Box from '@mui/material/Box';
 import factoryFrom from '../factory/factory-from';
 import itemComponents from '../factory/items/components';
 
-function renderTab({ id, title }, index) {
+const renderTab = ({ id, title }, index) => {
   return (
     <Tab key={index} id={id} label={title} />
   );
 };
 
-function renderItem(props, index) {
+const renderItem = (props, index) => {
   const ItemComponent = factoryFrom(itemComponents);
   return <ItemComponent key={index} {...props} />
 };
 
-function renderTabContent({ id, items }, selectedTab, index) {
+const renderTabContent = ({ id, items }, selectedTab, index) => {
   if (index !== selectedTab) {
     return null;
   }
@@ -35,7 +35,7 @@ function renderTabContent({ id, items }, selectedTab, index) {
 
 export default function Content({ tabs, vertical_id, selected_tab, title }) {
   const [selectedTab, setSelectedTab] = useState(selected_tab);
-  const handleTabChange = function(event, value) {
+  const handleTabChange = (event, value) => {
     setSelectedTab(value);
   };
 
