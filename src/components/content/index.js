@@ -6,7 +6,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import factoryFrom from '../factory/factory-from';
-import itemComponents from '../factory/items/components';
+import contentComponents from '../factory/content/components';
 
 const renderTab = ({ id, title }, index) => {
   return (
@@ -14,23 +14,13 @@ const renderTab = ({ id, title }, index) => {
   );
 };
 
-const renderItem = (props, index) => {
-  const ItemComponent = factoryFrom(itemComponents);
-  return <ItemComponent key={index} {...props} />
-};
-
-const renderTabContent = ({ id, items }, selectedTab, index) => {
+const renderTabContent = (props, selectedTab, index) => {
   if (index !== selectedTab) {
     return null;
   }
-  return (
-    items && (
-      <Box key={id}>
-        <div>
-          {items.map((item, index) => renderItem(item, index))}
-        </div>
-      </Box>)
-  );
+
+  const ContentComponent = factoryFrom(contentComponents);
+  return <ContentComponent key={index} {...props} />;
 };
 
 export default function Content({ tabs, vertical_id, selected_tab, title }) {

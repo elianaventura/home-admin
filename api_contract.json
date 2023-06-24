@@ -116,6 +116,7 @@
 			"selected_tab": 0,
 			"tabs": [
 				{
+					"type": "ITEMS_LIST",
 					"id": "SUPPLIES_ITEMS",
 					"title": "Items",
 					"items": [
@@ -434,6 +435,7 @@
 					]
 				},
 				{
+					"type": "REPORT",
 					"id": "SUPPLIES_REPORT",
 					"title": "Reporte",
 					"components": [
