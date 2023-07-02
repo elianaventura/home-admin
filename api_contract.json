@@ -438,7 +438,7 @@
 					"type": "REPORT",
 					"id": "SUPPLIES_REPORT",
 					"title": "Reporte",
-					"components": [
+					"reports_list": [
 						{
 							"id": "shopping_recommendation",
 							"display": "Compras recomendadas"
