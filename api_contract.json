@@ -111,9 +111,12 @@
 		},
 		{
 			"type": "CONTENT",
+			"title": "Mis compras",
 			"vertical_id": "SUPPLIES",
+			"selected_tab": 0,
 			"tabs": [
 				{
+					"type": "ITEMS_LIST",
 					"id": "SUPPLIES_ITEMS",
 					"title": "Items",
 					"items": [
@@ -121,10 +124,11 @@
 							"type": "SUPPLIES_ITEM",
 							"id": "IT01",
 							"title": "Lechuga",
-							"expanded": "true",
+							"expanded": true,
 							"input_data_attributes": [
 								{
 									"type": "priority",
+									"title": "Prioridad",
 									"number": 4
 								},
 								{
@@ -162,6 +166,7 @@
 								},
 								{
 									"type": "consumption_by_time",
+									"title": "Consumo estimado",
 									"time_units": [
 										{
 											"id": "week",
@@ -201,6 +206,7 @@
 								{
 									"type": "stock",
 									"amount": 0.0,
+									"title": "Stock",
 									"units": [
 										{
 											"id": "KG",
@@ -221,6 +227,7 @@
 								},
 								{
 									"type": "shopping_places",
+									"title": "Dónde comprar",
 									"places_list": [
 										{
 											"id": "PL01",
@@ -264,10 +271,11 @@
 							"type": "SUPPLIES_ITEM",
 							"id": "IT02",
 							"title": "Leche",
-							"expanded": "false",
+							"expanded": false,
 							"input_data_attributes": [
 								{
 									"type": "priority",
+									"title": "Prioridad",
 									"number": 5
 								},
 								{
@@ -305,6 +313,7 @@
 								},
 								{
 									"type": "consumption_by_time",
+									"title": "Consumo estimado",
 									"time_units": [
 										{
 											"id": "week",
@@ -343,6 +352,7 @@
 								},
 								{
 									"type": "stock",
+									"title": "Stock",
 									"amount": 3,
 									"units": [
 										{
@@ -390,6 +400,7 @@
 								},
 								{
 									"type": "shopping_places",
+									"title": "Dónde comprar",
 									"places_list": [
 										{
 											"id": "PL01",
@@ -432,9 +443,10 @@
 					]
 				},
 				{
+					"type": "REPORT",
 					"id": "SUPPLIES_REPORT",
 					"title": "Reporte",
-					"components": [
+					"reports_list": [
 						{
 							"id": "shopping_recommendation",
 							"display": "Compras recomendadas"
