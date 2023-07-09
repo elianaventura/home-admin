@@ -227,7 +227,7 @@
 								},
 								{
 									"type": "shopping_places",
-									"text": "Dónde comprar",
+									"title": "Dónde comprar",
 									"places_list": [
 										{
 											"id": "PL01",
@@ -352,6 +352,7 @@
 								},
 								{
 									"type": "stock",
+									"title": "Stock",
 									"amount": 3,
 									"units": [
 										{
