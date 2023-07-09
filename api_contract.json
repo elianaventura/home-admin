@@ -124,10 +124,11 @@
 							"type": "SUPPLIES_ITEM",
 							"id": "IT01",
 							"title": "Lechuga",
-							"expanded": "true",
+							"expanded": true,
 							"input_data_attributes": [
 								{
 									"type": "priority",
+									"title": "Prioridad",
 									"number": 4
 								},
 								{
@@ -165,6 +166,7 @@
 								},
 								{
 									"type": "consumption_by_time",
+									"title": "Consumo estimado",
 									"time_units": [
 										{
 											"id": "week",
@@ -204,6 +206,7 @@
 								{
 									"type": "stock",
 									"amount": 0.0,
+									"title": "Stock",
 									"units": [
 										{
 											"id": "KG",
@@ -224,6 +227,7 @@
 								},
 								{
 									"type": "shopping_places",
+									"text": "Dónde comprar",
 									"places_list": [
 										{
 											"id": "PL01",
@@ -267,10 +271,11 @@
 							"type": "SUPPLIES_ITEM",
 							"id": "IT02",
 							"title": "Leche",
-							"expanded": "false",
+							"expanded": false,
 							"input_data_attributes": [
 								{
 									"type": "priority",
+									"title": "Prioridad",
 									"number": 5
 								},
 								{
@@ -308,6 +313,7 @@
 								},
 								{
 									"type": "consumption_by_time",
+									"title": "Consumo estimado",
 									"time_units": [
 										{
 											"id": "week",
@@ -393,6 +399,7 @@
 								},
 								{
 									"type": "shopping_places",
+									"title": "Dónde comprar",
 									"places_list": [
 										{
 											"id": "PL01",
