@@ -8,11 +8,13 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styles from './supplies-item.module.scss';
 
-const renderInputDataAttribute = ({ title }, index) => (
-  <div key={index}>
-    {title}
-  </div>
-);
+import inputDataComponents from '../factory/supplies-inputs/components';
+import componentFactoryFrom from '../factory/factory-from';
+
+const renderInputDataAttribute = (props, index) => {
+  const InputDataComponent = componentFactoryFrom(inputDataComponents);
+  return <InputDataComponent key={index} {...props} />;
+};
 
 export default function SuppliesItem({ id, title, expanded, input_data_attributes }) {
   const [isExpanded, setExpanded] = React.useState(expanded);
