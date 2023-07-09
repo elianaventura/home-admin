@@ -111,7 +111,7 @@ export default function MenuComponent({ title, tools }) {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { xs: 'block', sm: 'block' } }}
           >
             {title}
           </Typography>
