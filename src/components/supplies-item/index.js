@@ -10,6 +10,7 @@ import styles from './supplies-item.module.scss';
 
 import inputDataComponents from '../factory/supplies-inputs/components';
 import componentFactoryFrom from '../factory/factory-from';
+import EditIcon from '@mui/icons-material/Edit';
 
 const renderInputDataAttribute = (props, index) => {
   const InputDataComponent = componentFactoryFrom(inputDataComponents);
@@ -31,7 +32,8 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          {title}
+          <span className={styles['item-title']}>{title}</span>
+          <EditIcon className={styles['item-edit-icon']} />
         </AccordionSummary>
         <AccordionDetails>
           {input_data_attributes.map((inputData, index) => renderInputDataAttribute(inputData, index))}
