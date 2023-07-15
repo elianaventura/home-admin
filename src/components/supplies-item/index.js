@@ -12,26 +12,13 @@ import inputDataComponents from '../factory/supplies-inputs/components';
 import componentFactoryFrom from '../factory/factory-from';
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
 
 const renderInputDataAttribute = (props, index) => {
   const InputDataComponent = componentFactoryFrom(inputDataComponents);
   return <InputDataComponent key={index} {...props} />;
 };
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
-
-export default function SuppliesItem({ id, title, expanded, input_data_attributes }) {
+export default function SuppliesItem({ id, title, expanded, input_data_attributes, itemsNameChangeText }) {
   const [isExpanded, setExpanded] = React.useState(expanded);
   const [titleEditOpen, setTitleEditOpen] = React.useState(false);
   const [itemTitle, setItemTitle] = React.useState(title);
@@ -73,9 +60,10 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          Cambiar título: <input type="text" value={itemTitle} onChange={onChangeTitle} />
-        </Box>
+        <div className={styles['item-edit-modal']}>
+          <span className={styles['item-name-change-text']}>{itemsNameChangeText}</span>
+          <input className={styles['item-name-change-input']} type="text" value={itemTitle} onChange={onChangeTitle} />
+        </div>
       </Modal>
     </div>
   );

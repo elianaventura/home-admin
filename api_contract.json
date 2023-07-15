@@ -119,6 +119,7 @@
 					"type": "ITEMS_LIST",
 					"id": "SUPPLIES_ITEMS",
 					"title": "Items",
+					"items_name_change_text": "Cambiar nombre:",
 					"items": [
 						{
 							"type": "SUPPLIES_ITEM",
