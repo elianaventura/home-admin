@@ -129,12 +129,13 @@
 							"input_data_attributes": [
 								{
 									"type": "priority",
-									"title": "Prioridad",
+									"title": "Prioridad:",
 									"number": 4
 								},
 								{
 									"type": "price_per_unit",
-									"title": "Precio de referencia",
+									"title": "Precio de referencia:",
+									"text_by": "por",
 									"price": {
 										"amount": 80,
 										"currencies": [
@@ -167,7 +168,7 @@
 								},
 								{
 									"type": "consumption_by_time",
-									"title": "Consumo estimado",
+									"title": "Consumo estimado:",
 									"time_units": [
 										{
 											"id": "week",
@@ -207,7 +208,7 @@
 								{
 									"type": "stock",
 									"amount": 0.0,
-									"title": "Stock",
+									"title": "Stock:",
 									"units": [
 										{
 											"id": "KG",
@@ -228,7 +229,7 @@
 								},
 								{
 									"type": "shopping_places",
-									"title": "Dónde comprar",
+									"title": "Dónde comprar:",
 									"places_list": [
 										{
 											"id": "PL01",
@@ -276,12 +277,12 @@
 							"input_data_attributes": [
 								{
 									"type": "priority",
-									"title": "Prioridad",
+									"title": "Prioridad:",
 									"number": 5
 								},
 								{
 									"type": "price_per_unit",
-									"title": "Precio de referencia",
+									"title": "Precio de referencia:",
 									"price": {
 										"amount": 200,
 										"currencies": [
@@ -314,7 +315,7 @@
 								},
 								{
 									"type": "consumption_by_time",
-									"title": "Consumo estimado",
+									"title": "Consumo estimado:",
 									"time_units": [
 										{
 											"id": "week",
@@ -353,7 +354,7 @@
 								},
 								{
 									"type": "stock",
-									"title": "Stock",
+									"title": "Stock:",
 									"amount": 3,
 									"units": [
 										{
