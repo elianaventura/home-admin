@@ -14,19 +14,19 @@ const renderUnit = (unit, index) => (
   <MenuItem className={styles['unit-option']} key={index} value={unit.id}>{unit.display}</MenuItem>
 );
 
-export default function PriceByUnit({ title, price, unit, text_by }) {
-  const [selectedPrice, setSelectedPrice] = useState(price);
-  const [currency, setCurrency] = useState(price.currencies.find(curr => curr.selected))
+export default function PriceByUnit({ title, amount, currency, unit, text_by }) {
+  const [price, setPrice] = useState(amount);
+  const [selectedCurrency, setSelectedCurrency] = useState(currency.options.find(curr => curr.selected))
   const [selectedUnit, setSelectedUnit] = useState(unit.options.find(un => un.selected));
 
   const handlePriceChange = (event) => {
-    setSelectedPrice(event.target.value);
+    setPrice(event.target.value);
   };
 
   const handleCurrencyChange = (event) => {
     if (event && event.target && event.target.value) {
-      const selectedCurrency = price.currencies.find(curr => event.target.value === curr.id);
-      setCurrency(selectedCurrency);
+      const newSelectedCurrency = currency.options.find(curr => event.target.value === curr.id);
+      setSelectedCurrency(newSelectedCurrency);
     }
   };
 
@@ -44,13 +44,13 @@ export default function PriceByUnit({ title, price, unit, text_by }) {
         className={styles['currency-select']}
         labelId="currency-select-label"
         id="currency-select"
-        value={currency.id}
-        label={price.currency_selected_label}
+        value={selectedCurrency.id}
+        label={selectedCurrency.currency_selected_label}
         onChange={handleCurrencyChange}
       >
-        {price.currencies.map((curr, index) => renderCurrency(curr, index))}
+        {currency.options.map((curr, index) => renderCurrency(curr, index))}
       </Select>
-      <input className={styles['amount-input']} value={selectedPrice.amount} onChange={handlePriceChange} />
+      <input className={styles['amount-input']} value={price} onChange={handlePriceChange} />
       <span>{text_by}</span>
       <Select
         className={styles['unit-select']}

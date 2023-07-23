@@ -136,10 +136,10 @@
 									"type": "price_per_unit",
 									"title": "Precio de referencia:",
 									"text_by": "por",
-									"price": {
-										"amount": 80,
+									"amount": 80,
+									"currency": {
 										"currency_select_label": "Moneda",
-										"currencies": [
+										"options": [
 											{
 												"id": "ARS",
 												"display": "$",
@@ -278,10 +278,10 @@
 									"type": "price_per_unit",
 									"title": "Precio de referencia:",
 									"text_by": "por",
-									"price": {
-										"amount": 200,
+									"amount": 200,
+									"currency": {
 										"currency_select_label": "Moneda",
-										"currencies": [
+										"options": [
 											{
 												"id": "ARS",
 												"display": "$",
