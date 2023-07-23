@@ -151,23 +151,20 @@
 											}
 										]
 									},
-									"units": [
-										{
-											"id": "KG",
-											"selected": true,
-											"display": {
-												"singular": "kg",
-												"plural": "kg"
+									"unit": {
+										"unit_select_label": "Unidades",
+										"options": [
+											{
+												"id": "KG",
+												"selected": true,
+												"display": "kg"
+											},
+											{
+												"id": "UNIT",
+												"display": "unidad"
 											}
-										},
-										{
-											"id": "UNIT",
-											"display": {
-												"singular": "unidad",
-												"plural": "unidades"
-											}
-										}
-									]
+										]
+									}
 								},
 								{
 									"type": "consumption_by_time",
@@ -189,46 +186,40 @@
 									],
 									"consuption": {
 										"amount": 0.25,
-										"units": [
-											{
-												"id": "KG",
-												"selected": true,
-												"display": {
-													"singular": "kg",
-													"plural": "kg"
+										"unit": {
+											"unit_select_label": "Unidades",
+											"options": [
+												{
+													"id": "KG",
+													"selected": true,
+													"display": "kg"
+												},
+												{
+													"id": "UNIT",
+													"display": "unidad"
 												}
-											},
-											{
-												"id": "UNIT",
-												"display": {
-													"singular": "unidad",
-													"plural": "unidades"
-												}
-											}
-										]
+											]
+										}
 									}
 								},
 								{
 									"type": "stock",
 									"amount": 0.0,
 									"title": "Stock:",
-									"units": [
-										{
-											"id": "KG",
-											"selected": true,
-											"display": {
-												"singular": "kg",
-												"plural": "kg"
+									"unit": {
+										"unit_select_label": "Unidades",
+										"options": [
+											{
+												"id": "KG",
+												"selected": true,
+												"display": "kg"
+											},
+											{
+												"id": "UNIT",
+												"display": "unidad"
 											}
-										},
-										{
-											"id": "UNIT",
-											"display": {
-												"singular": "unidad",
-												"plural": "unidades"
-											}
-										}
-									]
+										]
+									}
 								},
 								{
 									"type": "shopping_places",
@@ -302,23 +293,20 @@
 											}
 										]
 									},
-									"units": [
-										{
-											"id": "KG",
-											"display": {
-												"singular": "kg",
-												"plural": "kg"
+									"unit": {
+										"unit_select_label": "Unidades",
+										"options": [
+											{
+												"id": "KG",
+												"display": "kg"
+											},
+											{
+												"id": "UNIT",
+												"selected": true,
+												"display": "unidad"
 											}
-										},
-										{
-											"id": "UNIT",
-											"selected": true,
-											"display": {
-												"singular": "unidad",
-												"plural": "unidades"
-											}
-										}
-									]
+										]
+									}
 								},
 								{
 									"type": "consumption_by_time",
@@ -340,46 +328,40 @@
 									],
 									"consuption": {
 										"amount": 1,
-										"units": [
-											{
-												"id": "KG",
-												"display": {
-													"singular": "kg",
-													"plural": "kg"
+										"unit": {
+											"unit_select_label": "Unidades",
+											"options": [
+												{
+													"id": "KG",
+													"display": "kg"
+												},
+												{
+													"id": "UNIT",
+													"selected": true,
+													"display": "unidad"
 												}
-											},
-											{
-												"id": "UNIT",
-												"selected": true,
-												"display": {
-													"singular": "unidad",
-													"plural": "unidades"
-												}
-											}
-										]
+											]
+										}
 									}
 								},
 								{
 									"type": "stock",
 									"title": "Stock:",
 									"amount": 3,
-									"units": [
-										{
-											"id": "KG",
-											"display": {
-												"singular": "kg",
-												"plural": "kg"
+									"unit": {
+										"unit_select_label": "Unidades",
+										"options": [
+											{
+												"id": "KG",
+												"display": "kg"
+											},
+											{
+												"id": "UNIT",
+												"selected": true,
+												"display": "unidad"
 											}
-										},
-										{
-											"id": "UNIT",
-											"selected": true,
-											"display": {
-												"singular": "unidad",
-												"plural": "unidades"
-											}
-										}
-									],
+										]
+									},
 									"stock_details": {
 										"columns": [
 											{
