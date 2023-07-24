@@ -128,6 +128,21 @@
 							"expanded": true,
 							"input_data_attributes": [
 								{
+									"type": "unit",
+									"title": "Unidad",
+									"options": [
+										{
+											"id": "KG",
+											"selected": true,
+											"display": "kg"
+										},
+										{
+											"id": "UNIT",
+											"display": "unidad"
+										}
+									]
+								},
+								{
 									"type": "priority",
 									"title": "Prioridad:",
 									"number": 4
@@ -148,20 +163,6 @@
 											{
 												"id": "USD",
 												"display": "USD"
-											}
-										]
-									},
-									"unit": {
-										"unit_select_label": "Unidades",
-										"options": [
-											{
-												"id": "KG",
-												"selected": true,
-												"display": "kg"
-											},
-											{
-												"id": "UNIT",
-												"display": "unidad"
 											}
 										]
 									}
@@ -185,41 +186,13 @@
 										}
 									],
 									"consuption": {
-										"amount": 0.25,
-										"unit": {
-											"unit_select_label": "Unidades",
-											"options": [
-												{
-													"id": "KG",
-													"selected": true,
-													"display": "kg"
-												},
-												{
-													"id": "UNIT",
-													"display": "unidad"
-												}
-											]
-										}
+										"amount": 0.25
 									}
 								},
 								{
 									"type": "stock",
 									"amount": 0.0,
-									"title": "Stock:",
-									"unit": {
-										"unit_select_label": "Unidades",
-										"options": [
-											{
-												"id": "KG",
-												"selected": true,
-												"display": "kg"
-											},
-											{
-												"id": "UNIT",
-												"display": "unidad"
-											}
-										]
-									}
+									"title": "Stock:"
 								},
 								{
 									"type": "shopping_places",
@@ -270,6 +243,21 @@
 							"expanded": false,
 							"input_data_attributes": [
 								{
+									"type": "unit",
+									"title": "Unidad",
+									"options": [
+										{
+											"id": "KG",
+											"selected": true,
+											"display": "kg"
+										},
+										{
+											"id": "UNIT",
+											"display": "unidad"
+										}
+									]
+								},
+								{
 									"type": "priority",
 									"title": "Prioridad:",
 									"number": 5
@@ -290,20 +278,6 @@
 											{
 												"id": "USD",
 												"display": "USD"
-											}
-										]
-									},
-									"unit": {
-										"unit_select_label": "Unidades",
-										"options": [
-											{
-												"id": "KG",
-												"display": "kg"
-											},
-											{
-												"id": "UNIT",
-												"selected": true,
-												"display": "unidad"
 											}
 										]
 									}
@@ -327,41 +301,13 @@
 										}
 									],
 									"consuption": {
-										"amount": 1,
-										"unit": {
-											"unit_select_label": "Unidades",
-											"options": [
-												{
-													"id": "KG",
-													"display": "kg"
-												},
-												{
-													"id": "UNIT",
-													"selected": true,
-													"display": "unidad"
-												}
-											]
-										}
+										"amount": 1
 									}
 								},
 								{
 									"type": "stock",
 									"title": "Stock:",
 									"amount": 3,
-									"unit": {
-										"unit_select_label": "Unidades",
-										"options": [
-											{
-												"id": "KG",
-												"display": "kg"
-											},
-											{
-												"id": "UNIT",
-												"selected": true,
-												"display": "unidad"
-											}
-										]
-									},
 									"stock_details": {
 										"columns": [
 											{
