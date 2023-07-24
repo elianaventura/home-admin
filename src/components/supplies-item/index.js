@@ -12,6 +12,7 @@ import inputDataComponents from '../factory/supplies-inputs/components';
 import componentFactoryFrom from '../factory/factory-from';
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
+import { SuppliesItemProvider } from '../context/supplies-item';
 
 const renderInputDataAttribute = (props, index) => {
   const InputDataComponent = componentFactoryFrom(inputDataComponents);
@@ -39,6 +40,13 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
     setItemTitle(newTitle);
   };
 
+  const getSelectedUnit = () => {
+    const unitAttribute = input_data_attributes.find(attr => attr.type === 'unit');
+    if (!unitAttribute) return null;
+
+    return unitAttribute.options.find(un => un.selected);
+  };
+
   return (
     <div className={styles.container}>
       <Accordion expanded={isExpanded} onChange={handleExpand}>
@@ -51,7 +59,9 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
           <EditIcon onClick={openTitleEdit} className={styles['item-edit-icon']} />
         </AccordionSummary>
         <AccordionDetails>
-          {input_data_attributes.map((inputData, index) => renderInputDataAttribute(inputData, index))}
+          <SuppliesItemProvider value={getSelectedUnit()}>
+            {input_data_attributes.map((inputData, index) => renderInputDataAttribute(inputData, index))}
+          </SuppliesItemProvider>
         </AccordionDetails>
       </Accordion>
       <Modal

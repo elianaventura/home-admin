@@ -248,11 +248,11 @@
 									"options": [
 										{
 											"id": "KG",
-											"selected": true,
 											"display": "kg"
 										},
 										{
 											"id": "UNIT",
+											"selected": true,
 											"display": "unidad"
 										}
 									]

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 import styles from './unit.module.scss';
+import SuppliesItemContext from "@/components/context/supplies-item";
 
 const renderUnit = (unit, index) => (
   <MenuItem className={styles['unit-option']} key={index} value={unit.id}>{unit.display}</MenuItem>
@@ -10,11 +11,13 @@ const renderUnit = (unit, index) => (
 
 export default function Unit({ title, options, unit_select_label }) {
   const [selectedUnit, setSelectedUnit] = useState(options.find(un => un.selected));
+  const { setUnit } = useContext(SuppliesItemContext);
 
   const handleUnitChange = (event) => {
     if (event && event.target && event.target.value) {
       const newSelectedUnit = options.find(un => event.target.value === un.id);
       setSelectedUnit(newSelectedUnit);
+      setUnit(newSelectedUnit);
     }
   };
 

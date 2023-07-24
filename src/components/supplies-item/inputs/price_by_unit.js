@@ -1,10 +1,9 @@
-import { useState } from "react";
-import InputLabel from '@mui/material/InputLabel';
+import { useContext, useState } from "react";
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 import styles from './price_by_unit.module.scss';
+import SuppliesItemContext from "@/components/context/supplies-item";
 
 const renderCurrency = (currency, index) => (
   <MenuItem className={styles['currency-option']} key={index} value={currency.id}>{currency.display}</MenuItem>
@@ -12,7 +11,8 @@ const renderCurrency = (currency, index) => (
 
 export default function PriceByUnit({ title, amount, currency, text_by }) {
   const [price, setPrice] = useState(amount);
-  const [selectedCurrency, setSelectedCurrency] = useState(currency.options.find(curr => curr.selected))
+  const [selectedCurrency, setSelectedCurrency] = useState(currency.options.find(curr => curr.selected));
+  const { unit } = useContext(SuppliesItemContext);
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
