@@ -25,6 +25,13 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
   const [itemTitle, setItemTitle] = React.useState(title);
   const handleTitleEditOpen = () => setTitleEditOpen(true);
   const handleTitleEditClose = () => setTitleEditOpen(false);
+  const [formData, setFormData] = React.useState({});
+
+  const handleFieldChange = (fieldName, value) => {
+    const newFormData = { ...formData };
+    newFormData[`${fieldName}`] = value;
+    setFormData(newFormData);
+  };
 
   const handleExpand = () => {
     setExpanded(!isExpanded);
@@ -60,7 +67,7 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
         </AccordionSummary>
         <AccordionDetails>
           <SuppliesItemProvider value={getSelectedUnit()}>
-            {input_data_attributes.map((inputData, index) => renderInputDataAttribute(inputData, index))}
+            {input_data_attributes.map((inputData, index) => renderInputDataAttribute({ ...inputData, handleFieldChange }, index))}
           </SuppliesItemProvider>
         </AccordionDetails>
       </Accordion>

@@ -6,7 +6,7 @@ import styles from './unit.module.scss';
 import SuppliesItemContext from "@/components/context/supplies-item";
 
 const renderUnit = (unit, index) => (
-  <MenuItem className={styles['unit-option']} key={index} value={unit.id}>{unit.display}</MenuItem>
+  <MenuItem className={styles['unit-option']} key={index} value={unit.id}>{unit.display.singular}</MenuItem>
 );
 
 export default function Unit({ title, options, unit_select_label }) {

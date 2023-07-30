@@ -9,13 +9,18 @@ const renderCurrency = (currency, index) => (
   <MenuItem className={styles['currency-option']} key={index} value={currency.id}>{currency.display}</MenuItem>
 );
 
-export default function PriceByUnit({ title, amount, currency, text_by }) {
+export default function PriceByUnit({ title, amount, currency, text_by, field_name, handleFieldChange }) {
   const [price, setPrice] = useState(amount);
   const [selectedCurrency, setSelectedCurrency] = useState(currency.options.find(curr => curr.selected));
   const { unit } = useContext(SuppliesItemContext);
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
+    handleFieldChange(field_name, {
+      amount: price,
+      currency: selectedCurrency.id,
+      unit: unit.id,
+    });
   };
 
   const handleCurrencyChange = (event) => {

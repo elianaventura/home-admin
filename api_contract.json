@@ -129,26 +129,35 @@
 							"input_data_attributes": [
 								{
 									"type": "unit",
+									"field_name": "unit",
 									"title": "Unidad",
 									"options": [
 										{
 											"id": "KG",
 											"selected": true,
-											"display": "kg"
+											"display": {
+												"singular": "kg",
+												"plural": "kg"
+											}
 										},
 										{
 											"id": "UNIT",
-											"display": "unidad"
+											"display": {
+												"singular": "unidad",
+												"plural": "unidades"
+											}
 										}
 									]
 								},
 								{
 									"type": "priority",
+									"field_name": "priority",
 									"title": "Prioridad:",
 									"number": 4
 								},
 								{
 									"type": "price_per_unit",
+									"field_name": "price_per_unit",
 									"title": "Precio de referencia:",
 									"text_by": "por",
 									"amount": 80,
@@ -169,6 +178,7 @@
 								},
 								{
 									"type": "consumption_by_time",
+									"field_name": "consumption_by_time",
 									"title": "Consumo estimado:",
 									"time_units": [
 										{
@@ -196,6 +206,7 @@
 								},
 								{
 									"type": "shopping_places",
+									"field_name": "shopping_places",
 									"title": "Dónde comprar:",
 									"places_list": [
 										{
@@ -244,16 +255,23 @@
 							"input_data_attributes": [
 								{
 									"type": "unit",
+									"field_name": "unit",
 									"title": "Unidad",
 									"options": [
 										{
 											"id": "KG",
-											"display": "kg"
+											"display": {
+												"singular": "kg",
+												"plural": "kg"
+											}
 										},
 										{
 											"id": "UNIT",
 											"selected": true,
-											"display": "unidad"
+											"display": {
+												"singular": "unidad",
+												"plural": "unidades"
+											}
 										}
 									]
 								},
@@ -264,6 +282,7 @@
 								},
 								{
 									"type": "price_per_unit",
+									"field_name": "price_per_unit",
 									"title": "Precio de referencia:",
 									"text_by": "por",
 									"amount": 200,
@@ -284,6 +303,7 @@
 								},
 								{
 									"type": "consumption_by_time",
+									"field_name": "consumption_by_time",
 									"title": "Consumo estimado:",
 									"time_units": [
 										{
@@ -306,6 +326,7 @@
 								},
 								{
 									"type": "stock",
+									"field_name": "stock",
 									"title": "Stock:",
 									"amount": 3,
 									"stock_details": {
@@ -337,6 +358,7 @@
 								},
 								{
 									"type": "shopping_places",
+									"field_name": "shopping_places",
 									"title": "Dónde comprar",
 									"places_list": [
 										{
