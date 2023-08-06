@@ -1,6 +1,7 @@
 "use client"
 
 import factoryFrom from '../factory/factory-from';
+const IconComponent = factoryFrom(verticalIconComponents);
 import verticalIconComponents from '../factory/vertical-icons/components';
 import styles from './verticals.module.scss';
 
@@ -13,7 +14,6 @@ const renderOption = function(IconComponent, { id, type, title, icon }, onSelect
 };
 
 export default function Verticals({ options }) {
-  const IconComponent = factoryFrom(verticalIconComponents);
   return (
     <div>
       <ul className={styles['verticals-list']}>

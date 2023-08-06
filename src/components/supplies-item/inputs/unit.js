@@ -9,7 +9,7 @@ const renderUnit = (unit, index) => (
   <MenuItem className={styles['unit-option']} key={index} value={unit.id}>{unit.display.singular}</MenuItem>
 );
 
-export default function Unit({ title, options, unit_select_label }) {
+export default function Unit({ title, options, unit_select_label, field_name, handleFieldChange }) {
   const [selectedUnit, setSelectedUnit] = useState(options.find(un => un.selected));
   const { setUnit } = useContext(SuppliesItemContext);
 
@@ -18,6 +18,7 @@ export default function Unit({ title, options, unit_select_label }) {
       const newSelectedUnit = options.find(un => event.target.value === un.id);
       setSelectedUnit(newSelectedUnit);
       setUnit(newSelectedUnit);
+      handleFieldChange(field_name, newSelectedUnit.id);
     }
   };
 

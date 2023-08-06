@@ -10,24 +10,50 @@ import styles from './supplies-item.module.scss';
 
 import inputDataComponents from '../factory/supplies-inputs/components';
 import componentFactoryFrom from '../factory/factory-from';
+const InputDataComponent = componentFactoryFrom(inputDataComponents);
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
 import { SuppliesItemProvider } from '../context/supplies-item';
 
 const renderInputDataAttribute = (props, index) => {
-  const InputDataComponent = componentFactoryFrom(inputDataComponents);
   return <InputDataComponent key={index} {...props} />;
 };
 
-export default function SuppliesItem({ id, title, expanded, input_data_attributes, itemsNameChangeText }) {
+export default function SuppliesItem({ id, title, expanded, input_data_attributes, actions, itemsNameChangeText }) {
   const [isExpanded, setExpanded] = React.useState(expanded);
   const [titleEditOpen, setTitleEditOpen] = React.useState(false);
   const [itemTitle, setItemTitle] = React.useState(title);
+  const [formChanged, setFormChanged] = React.useState(false);
   const handleTitleEditOpen = () => setTitleEditOpen(true);
   const handleTitleEditClose = () => setTitleEditOpen(false);
   const [formData, setFormData] = React.useState({});
 
+  const onFirstSave = () => {
+
+  };
+
+  const onEdit = () => {
+
+  };
+
+  const renderAction = ({ type, text }, index) => {
+    switch (type) {
+      case ('SUBMIT_EDITION'):
+        return (
+          formChanged && <Button key={index} onClick={onEdit} variant="contained">{text}</Button>
+        );
+      case ('SUBMIT'):
+        return (
+          formChanged && <Button key={index} onClick={onFirstSave} variant="contained">{text}</Button>
+        );
+    }
+  };
+
   const handleFieldChange = (fieldName, value) => {
+    if (!formChanged) {
+      setFormChanged(true);
+    }
     const newFormData = { ...formData };
     newFormData[`${fieldName}`] = value;
     setFormData(newFormData);
@@ -68,6 +94,7 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
         <AccordionDetails>
           <SuppliesItemProvider value={getSelectedUnit()}>
             {input_data_attributes.map((inputData, index) => renderInputDataAttribute({ ...inputData, handleFieldChange }, index))}
+            {actions.map((action, index) => renderAction(action, index))}
           </SuppliesItemProvider>
         </AccordionDetails>
       </Accordion>

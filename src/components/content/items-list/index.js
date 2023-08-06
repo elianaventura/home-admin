@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import factoryFrom from '../../factory/factory-from';
 import itemComponents from '../../factory/items/components';
+const ItemComponent = factoryFrom(itemComponents);
 
 const renderItem = (props, itemsNameChangeText, index) => {
-  const ItemComponent = factoryFrom(itemComponents);
   return <ItemComponent key={index} {...props} itemsNameChangeText={itemsNameChangeText} />
 };
 

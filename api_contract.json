@@ -245,6 +245,12 @@
 										}
 									]
 								}
+							],
+							"actions": [
+								{
+									"type": "SUBMIT_EDITION",
+									"text": "Confirmar cambios"
+								}
 							]
 						},
 						{
@@ -396,6 +402,12 @@
 											]
 										}
 									]
+								}
+							],
+							"actions": [
+								{
+									"type": "SUBMIT_EDITION",
+									"text": "Confirmar cambios"
 								}
 							]
 						}

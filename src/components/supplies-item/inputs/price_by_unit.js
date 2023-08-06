@@ -27,6 +27,11 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
     if (event && event.target && event.target.value) {
       const newSelectedCurrency = currency.options.find(curr => event.target.value === curr.id);
       setSelectedCurrency(newSelectedCurrency);
+      handleFieldChange(field_name, {
+        amount: price,
+        currency: newSelectedCurrency.id,
+        unit: unit.id,
+      });
     }
   };
 
