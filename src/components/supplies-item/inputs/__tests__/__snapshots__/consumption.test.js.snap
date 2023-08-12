@@ -3,7 +3,7 @@
 exports[`First renders passes test 1`] = `
 <div>
   <div>
-    Consuption
+    Consumo
     : x unidades
   </div>
 </div>
