@@ -7,4 +7,10 @@ describe('First', () => {
  
     expect(container).toMatchSnapshot();
   });
+
+  it('text is present', () => {
+    const { getByText } = render(<Consuption title="Consumo" />);
+ 
+    expect(getByText('Consumo: x unidades')).toBeInTheDocument();
+  });
 });
