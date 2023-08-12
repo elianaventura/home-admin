@@ -1,0 +1,26 @@
+.currency-select {
+  width: auto;
+  font-size: 14px;
+
+  & > div {
+    padding: 0 0 0 8px;
+  }
+}
+
+.currency-option,
+.unit-select {
+  font-size: 14px;
+  height: 24px;
+  min-height: unset;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.amount-input {
+  font-size: 14px;
+  max-width: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  text-align: center;
+  height: 20px;
+  border-radius: 4px;
+}

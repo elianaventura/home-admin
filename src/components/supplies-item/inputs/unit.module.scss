@@ -1,0 +1,12 @@
+.unit-select,
+.unit-option {
+  font-size: 14px;
+  height: 24px;
+  min-height: unset;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  & > div {
+    padding: 0 0 0 8px;
+  }
+}

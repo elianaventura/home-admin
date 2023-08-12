@@ -119,6 +119,7 @@
 					"type": "ITEMS_LIST",
 					"id": "SUPPLIES_ITEMS",
 					"title": "Items",
+					"items_name_change_text": "Cambiar nombre:",
 					"items": [
 						{
 							"type": "SUPPLIES_ITEM",
@@ -127,26 +128,10 @@
 							"expanded": true,
 							"input_data_attributes": [
 								{
-									"type": "priority",
-									"title": "Prioridad",
-									"number": 4
-								},
-								{
-									"type": "price_per_unit",
-									"title": "Precio de referencia",
-									"price": {
-										"amount": 80,
-										"currencies": [
-											{
-												"id": "ARS",
-												"selected": true
-											},
-											{
-												"id": "USD"
-											}
-										]
-									},
-									"units": [
+									"type": "unit",
+									"field_name": "unit",
+									"title": "Unidad",
+									"options": [
 										{
 											"id": "KG",
 											"selected": true,
@@ -165,8 +150,36 @@
 									]
 								},
 								{
+									"type": "priority",
+									"field_name": "priority",
+									"title": "Prioridad:",
+									"number": 4
+								},
+								{
+									"type": "price_per_unit",
+									"field_name": "price_per_unit",
+									"title": "Precio de referencia:",
+									"text_by": "por",
+									"amount": 80,
+									"currency": {
+										"currency_select_label": "Moneda",
+										"options": [
+											{
+												"id": "ARS",
+												"display": "$",
+												"selected": true
+											},
+											{
+												"id": "USD",
+												"display": "USD"
+											}
+										]
+									}
+								},
+								{
 									"type": "consumption_by_time",
-									"title": "Consumo estimado",
+									"field_name": "consumption_by_time",
+									"title": "Consumo estimado:",
 									"time_units": [
 										{
 											"id": "week",
@@ -183,34 +196,76 @@
 										}
 									],
 									"consuption": {
-										"amount": 0.25,
-										"units": [
-											{
-												"id": "KG",
-												"selected": true,
-												"display": {
-													"singular": "kg",
-													"plural": "kg"
-												}
-											},
-											{
-												"id": "UNIT",
-												"display": {
-													"singular": "unidad",
-													"plural": "unidades"
-												}
-											}
-										]
+										"amount": 0.25
 									}
 								},
 								{
 									"type": "stock",
 									"amount": 0.0,
-									"title": "Stock",
-									"units": [
+									"title": "Stock:"
+								},
+								{
+									"type": "shopping_places",
+									"field_name": "shopping_places",
+									"title": "Dónde comprar:",
+									"places_list": [
+										{
+											"id": "PL01",
+											"name": "Coto",
+											"web_site": null,
+											"address": {
+												"verbose": "Av. San Juan 1234, Capital Federal",
+												"coordinates": {
+													"lat": -34.615387,
+													"long": -58.383117
+												}
+											},
+											"item_price": {
+												"amount": 100,
+												"currencies": [
+													{
+														"id": "ARS",
+														"selected": true
+													},
+													{
+														"id": "USD"
+													}
+												]
+											},
+											"available_days": [
+												{
+													"id": "MON",
+													"display": "LUN"
+												},
+												{
+													"id": "WED",
+													"display": "MIE"
+												}
+											]
+										}
+									]
+								}
+							],
+							"actions": [
+								{
+									"type": "SUBMIT_EDITION",
+									"text": "Confirmar cambios"
+								}
+							]
+						},
+						{
+							"type": "SUPPLIES_ITEM",
+							"id": "IT02",
+							"title": "Leche",
+							"expanded": false,
+							"input_data_attributes": [
+								{
+									"type": "unit",
+									"field_name": "unit",
+									"title": "Unidad",
+									"options": [
 										{
 											"id": "KG",
-											"selected": true,
 											"display": {
 												"singular": "kg",
 												"plural": "kg"
@@ -218,6 +273,7 @@
 										},
 										{
 											"id": "UNIT",
+											"selected": true,
 											"display": {
 												"singular": "unidad",
 												"plural": "unidades"
@@ -226,7 +282,89 @@
 									]
 								},
 								{
+									"type": "priority",
+									"title": "Prioridad:",
+									"number": 5
+								},
+								{
+									"type": "price_per_unit",
+									"field_name": "price_per_unit",
+									"title": "Precio de referencia:",
+									"text_by": "por",
+									"amount": 200,
+									"currency": {
+										"currency_select_label": "Moneda",
+										"options": [
+											{
+												"id": "ARS",
+												"display": "$",
+												"selected": true
+											},
+											{
+												"id": "USD",
+												"display": "USD"
+											}
+										]
+									}
+								},
+								{
+									"type": "consumption_by_time",
+									"field_name": "consumption_by_time",
+									"title": "Consumo estimado:",
+									"time_units": [
+										{
+											"id": "week",
+											"display": "semana",
+											"selected": true
+										},
+										{
+											"id": "week",
+											"display": "día"
+										},
+										{
+											"id": "month",
+											"display": "mes"
+										}
+									],
+									"consuption": {
+										"amount": 1
+									}
+								},
+								{
+									"type": "stock",
+									"field_name": "stock",
+									"title": "Stock:",
+									"amount": 3,
+									"stock_details": {
+										"columns": [
+											{
+												"id": "id",
+												"display": "ID"
+											},
+											{
+												"id": "expiration_date",
+												"display": "Fecha de Vencimiento"
+											},
+											{
+												"id": "brand",
+												"display": "Marca"
+											}
+										],
+										"items": [
+											{
+												"id": "IT1_U1",
+												"expiration_date": "22-04-2023",
+												"brand": {
+													"id": "BR01",
+													"name": "La Serenisima"
+												}
+											}
+										]
+									}
+								},
+								{
 									"type": "shopping_places",
+									"field_name": "shopping_places",
 									"title": "Dónde comprar",
 									"places_list": [
 										{
@@ -265,178 +403,11 @@
 										}
 									]
 								}
-							]
-						},
-						{
-							"type": "SUPPLIES_ITEM",
-							"id": "IT02",
-							"title": "Leche",
-							"expanded": false,
-							"input_data_attributes": [
+							],
+							"actions": [
 								{
-									"type": "priority",
-									"title": "Prioridad",
-									"number": 5
-								},
-								{
-									"type": "price_per_unit",
-									"title": "Precio de referencia",
-									"price": {
-										"amount": 200,
-										"currencies": [
-											{
-												"id": "ARS",
-												"selected": true
-											},
-											{
-												"id": "USD"
-											}
-										]
-									},
-									"units": [
-										{
-											"id": "KG",
-											"display": {
-												"singular": "kg",
-												"plural": "kg"
-											}
-										},
-										{
-											"id": "UNIT",
-											"selected": true,
-											"display": {
-												"singular": "unidad",
-												"plural": "unidades"
-											}
-										}
-									]
-								},
-								{
-									"type": "consumption_by_time",
-									"title": "Consumo estimado",
-									"time_units": [
-										{
-											"id": "week",
-											"display": "semana",
-											"selected": true
-										},
-										{
-											"id": "week",
-											"display": "día"
-										},
-										{
-											"id": "month",
-											"display": "mes"
-										}
-									],
-									"consuption": {
-										"amount": 1,
-										"units": [
-											{
-												"id": "KG",
-												"display": {
-													"singular": "kg",
-													"plural": "kg"
-												}
-											},
-											{
-												"id": "UNIT",
-												"selected": true,
-												"display": {
-													"singular": "unidad",
-													"plural": "unidades"
-												}
-											}
-										]
-									}
-								},
-								{
-									"type": "stock",
-									"title": "Stock",
-									"amount": 3,
-									"units": [
-										{
-											"id": "KG",
-											"display": {
-												"singular": "kg",
-												"plural": "kg"
-											}
-										},
-										{
-											"id": "UNIT",
-											"selected": true,
-											"display": {
-												"singular": "unidad",
-												"plural": "unidades"
-											}
-										}
-									],
-									"stock_details": {
-										"columns": [
-											{
-												"id": "id",
-												"display": "ID"
-											},
-											{
-												"id": "expiration_date",
-												"display": "Fecha de Vencimiento"
-											},
-											{
-												"id": "brand",
-												"display": "Marca"
-											}
-										],
-										"items": [
-											{
-												"id": "IT1_U1",
-												"expiration_date": "22-04-2023",
-												"brand": {
-													"id": "BR01",
-													"name": "La Serenisima"
-												}
-											}
-										]
-									}
-								},
-								{
-									"type": "shopping_places",
-									"title": "Dónde comprar",
-									"places_list": [
-										{
-											"id": "PL01",
-											"name": "Coto",
-											"web_site": null,
-											"address": {
-												"verbose": "Av. San Juan 1234, Capital Federal",
-												"coordinates": {
-													"lat": -34.615387,
-													"long": -58.383117
-												}
-											},
-											"item_price": {
-												"amount": 100,
-												"currencies": [
-													{
-														"id": "ARS",
-														"selected": true
-													},
-													{
-														"id": "USD"
-													}
-												]
-											},
-											"available_days": [
-												{
-													"id": "MON",
-													"display": "LUN"
-												},
-												{
-													"id": "WED",
-													"display": "MIE"
-												}
-											]
-										}
-									]
+									"type": "SUBMIT_EDITION",
+									"text": "Confirmar cambios"
 								}
 							]
 						}

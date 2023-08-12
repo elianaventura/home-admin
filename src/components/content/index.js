@@ -7,6 +7,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import factoryFrom from '../factory/factory-from';
 import contentComponents from '../factory/content/components';
+const ContentComponent = factoryFrom(contentComponents);
 
 const renderTab = ({ id, title }, index) => {
   return (
@@ -18,8 +19,7 @@ const renderTabContent = (props, selectedTab, index) => {
   if (index !== selectedTab) {
     return null;
   }
-
-  const ContentComponent = factoryFrom(contentComponents);
+  
   return <ContentComponent key={index} {...props} />;
 };
 
