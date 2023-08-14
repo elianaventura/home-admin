@@ -17,7 +17,7 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
     handleFieldChange(field_name, {
-      amount: price,
+      amount: event.target.value,
       currency: selectedCurrency.id,
       unit: unit.id,
     });
@@ -43,7 +43,7 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
         labelId="currency-select-label"
         id="currency-select"
         value={selectedCurrency.id}
-        label={selectedCurrency.currency_selected_label}
+        label={selectedCurrency.currency_select_label}
         onChange={handleCurrencyChange}
       >
         {currency.options.map((curr, index) => renderCurrency(curr, index))}
