@@ -73,5 +73,13 @@ describe('First', () => {
     await user.click(newOption);
 
     expect(getByText('USD')).toBeInTheDocument();
+    expect(props.handleFieldChange).toHaveBeenCalledWith(
+      props.field_name,
+      {
+        amount: props.amount,
+        currency: 'USD',
+        unit: 'KG',
+      },
+    );
   });
 });
