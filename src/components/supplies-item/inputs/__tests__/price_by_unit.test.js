@@ -1,8 +1,11 @@
 import { render } from "@testing-library/react";
 import PriceByUnit from "../price_by_unit";
 import { SuppliesItemProvider } from "@/components/context/supplies-item";
+import userEvent from '@testing-library/user-event';
+import { screen } from '@testing-library/dom';
 
 const props = {
+  field_name: 'price_per_unit',
   title: 'Precio',
   amount: 100,
   currency: {
@@ -20,6 +23,7 @@ const props = {
       },
     ],
   },
+  handleFieldChange: jest.fn(),
 };
 
 const unit = {
@@ -40,5 +44,34 @@ describe('First', () => {
     );
  
     expect(container).toMatchSnapshot();
+  });
+
+  it('currency default selected currency is rendered', () => {
+    const { getByText } = render(
+      <SuppliesItemProvider value={unit}>
+        <PriceByUnit {...props} />
+      </SuppliesItemProvider>
+    );
+ 
+    expect(getByText('$')).toBeInTheDocument();
+  });
+
+  it('should change price', async () => {
+    const user = userEvent.setup();
+    const { getByText } = render(
+      <SuppliesItemProvider value={unit}>
+        <PriceByUnit {...props} />
+      </SuppliesItemProvider>
+    );
+ 
+    const selector = getByText('$');
+    expect(screen.queryByText('USD')).toBeNull();
+
+    await user.click(selector);
+
+    const newOption = getByText('USD');
+    await user.click(newOption);
+
+    expect(getByText('USD')).toBeInTheDocument();
   });
 });
