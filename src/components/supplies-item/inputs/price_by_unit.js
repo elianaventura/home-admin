@@ -48,6 +48,6 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
       >
         {currency.options.map((curr, index) => renderCurrency(curr, index))}
       </Select>
-      <input className={styles['amount-input']} value={price} onChange={handlePriceChange} />
+      <input data-testid="price-amount-input" className={styles['amount-input']} value={price} onChange={handlePriceChange} />
     </div>);
 }

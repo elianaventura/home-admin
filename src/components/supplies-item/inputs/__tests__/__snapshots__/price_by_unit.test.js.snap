@@ -55,6 +55,7 @@ exports[`First renders passes snapshot 1`] = `
     </div>
     <input
       class="amount-input"
+      data-testid="price-amount-input"
       value="100"
     />
   </div>
