@@ -93,12 +93,12 @@ describe('First', () => {
  
     const amountInput = getByTestId('price-amount-input');
     await userEvent.clear(amountInput);
-    await userEvent.type(amountInput, '1');
+    await userEvent.type(amountInput, '180');
 
     expect(props.handleFieldChange).toHaveBeenCalledWith(
       props.field_name,
       {
-        amount: '1',
+        amount: '180',
         currency: 'ARS',
         unit: 'KG',
       },
