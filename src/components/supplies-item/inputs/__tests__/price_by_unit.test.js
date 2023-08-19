@@ -56,7 +56,7 @@ describe('First', () => {
     expect(getByText('$')).toBeInTheDocument();
   });
 
-  it('should change price', async () => {
+  it('should change currency', async () => {
     const user = userEvent.setup();
     const { getByText } = render(
       <SuppliesItemProvider value={unit}>
@@ -78,6 +78,28 @@ describe('First', () => {
       {
         amount: props.amount,
         currency: 'USD',
+        unit: 'KG',
+      },
+    );
+  });
+
+  it('should change price amount', async () => {
+    const user = userEvent.setup();
+    const { getByTestId } = render(
+      <SuppliesItemProvider value={unit}>
+        <PriceByUnit {...props} />
+      </SuppliesItemProvider>
+    );
+ 
+    const amountInput = getByTestId('price-amount-input');
+    await userEvent.clear(amountInput);
+    await userEvent.type(amountInput, '1');
+
+    expect(props.handleFieldChange).toHaveBeenCalledWith(
+      props.field_name,
+      {
+        amount: '1',
+        currency: 'ARS',
         unit: 'KG',
       },
     );
