@@ -35,8 +35,8 @@ const unit = {
   },
 };
 
-describe('First', () => {
-  it('renders passes snapshot', () => {
+describe('PriceByUnit', () => {
+  it('render passes snapshot', () => {
     const { container } = render(
       <SuppliesItemProvider value={unit}>
         <PriceByUnit {...props} />
@@ -46,7 +46,7 @@ describe('First', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('currency default selected currency is rendered', () => {
+  it('currency default selected is rendered', () => {
     const { getByText } = render(
       <SuppliesItemProvider value={unit}>
         <PriceByUnit {...props} />
@@ -84,7 +84,7 @@ describe('First', () => {
   });
 
   it('should change price amount', async () => {
-    const user = userEvent.setup();
+    userEvent.setup();
     const { getByTestId } = render(
       <SuppliesItemProvider value={unit}>
         <PriceByUnit {...props} />
