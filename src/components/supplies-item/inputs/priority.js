@@ -6,12 +6,13 @@ export default function Priority({ title, number, field_name, handleFieldChange 
 
   const handleChange = (event) => {
     setPriority(event.target.value);
+    handleFieldChange(field_name, event.target.value);
   };
 
   return (
     <div>
       <span className={styles['priority-title']}>{title}</span>
-      <input className={styles['priority-input']} value={priority} onChange={handleChange} />
+      <input data-testid="priority-input" className={styles['priority-input']} value={priority} onChange={handleChange} />
     </div>
   );
 }

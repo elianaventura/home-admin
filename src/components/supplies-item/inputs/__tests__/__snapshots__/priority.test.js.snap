@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit render passes snapshot 1`] = `
+<div>
+  <div>
+    <span
+      class="priority-title"
+    >
+      Prioridad:
+    </span>
+    <input
+      class="priority-input"
+      data-testid="priority-input"
+      value="4"
+    />
+  </div>
+</div>
+`;
