@@ -30,11 +30,11 @@ export default function SuppliesItem({ id, title, expanded, input_data_attribute
   const [formData, setFormData] = React.useState({});
 
   const onFirstSave = () => {
-
+    console.log(formData);
   };
 
   const onEdit = () => {
-
+    console.log(formData);
   };
 
   const renderAction = ({ type, text }, index) => {
