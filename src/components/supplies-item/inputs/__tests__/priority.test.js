@@ -31,6 +31,8 @@ describe('Unit', () => {
     await userEvent.clear(input);
     await userEvent.type(input, '3');
 
+    expect(input.value).toBe('3');
+
     expect(props.handleFieldChange).toHaveBeenCalledWith(
       props.field_name,
       '3',
