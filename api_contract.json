@@ -179,7 +179,7 @@
 								{
 									"type": "consumption_by_time",
 									"field_name": "consumption_by_time",
-									"title": "Consumo estimado:",
+									"title": "Consumo estimado por",
 									"time_units": [
 										{
 											"id": "week",
@@ -195,9 +195,7 @@
 											"display": "mes"
 										}
 									],
-									"consuption": {
-										"amount": 0.25
-									}
+									"amount": 0.25
 								},
 								{
 									"type": "stock",
@@ -310,7 +308,7 @@
 								{
 									"type": "consumption_by_time",
 									"field_name": "consumption_by_time",
-									"title": "Consumo estimado:",
+									"title": "Consumo estimado por",
 									"time_units": [
 										{
 											"id": "week",
@@ -326,9 +324,7 @@
 											"display": "mes"
 										}
 									],
-									"consuption": {
-										"amount": 1
-									}
+									"amount": 1
 								},
 								{
 									"type": "stock",
