@@ -9,17 +9,15 @@ const renderUnit = (unit, index) => (
   <MenuItem className={styles['unit-option']} key={index} value={unit.id}>{unit.display.singular}</MenuItem>
 );
 
-export default function Unit({ title, options, unit_select_label, field_name, handleFieldChange }) {
+export default function Unit({ title, options, field_name, handleFieldChange }) {
   const [selectedUnit, setSelectedUnit] = useState(options.find(un => un.selected));
   const { setUnit } = useContext(SuppliesItemContext);
 
   const handleUnitChange = (event) => {
-    if (event && event.target && event.target.value) {
-      const newSelectedUnit = options.find(un => event.target.value === un.id);
-      setSelectedUnit(newSelectedUnit);
-      setUnit(newSelectedUnit);
-      handleFieldChange(field_name, newSelectedUnit.id);
-    }
+    const newSelectedUnit = options.find(un => event.target.value === un.id);
+    setSelectedUnit(newSelectedUnit);
+    setUnit(newSelectedUnit);
+    handleFieldChange(field_name, newSelectedUnit.id);
   };
 
   return (
@@ -30,7 +28,6 @@ export default function Unit({ title, options, unit_select_label, field_name, ha
         labelId="unit-select-label"
         id="currency-select"
         value={selectedUnit.id}
-        label={unit_select_label}
         onChange={handleUnitChange}
       >
         {options.map((un, index) => renderUnit(un, index))}
