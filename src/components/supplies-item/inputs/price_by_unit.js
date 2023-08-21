@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
@@ -19,7 +19,6 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
     handleFieldChange(field_name, {
       amount: event.target.value,
       currency: selectedCurrency.id,
-      unit: unit.id,
     });
   };
 
@@ -29,7 +28,6 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
     handleFieldChange(field_name, {
       amount: price,
       currency: newSelectedCurrency.id,
-      unit: unit.id,
     });
   };
 

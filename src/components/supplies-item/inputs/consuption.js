@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import SuppliesItemContext from "@/components/context/supplies-item";
@@ -20,14 +20,6 @@ export default function Consuption({ title, amount, time_units, field_name, hand
   const { unit } = useContext(SuppliesItemContext);
   const [amountConsumption, setAmountConsumption] = useState(amount);
 
-  useEffect(() => {
-    handleFieldChange(field_name, {
-      amount: amountConsumption,
-      unit: unit.id,
-      time_unit: selectedTimeUnit.id,
-    });
-  }, [unit]);
-
   const handleTimeUnitChange = (event) => {
     const newSelectedTimeUnit = time_units.find(un => event.target.value === un.id);
     setSelectedTimeUnit(newSelectedTimeUnit);
@@ -42,7 +34,6 @@ export default function Consuption({ title, amount, time_units, field_name, hand
     setAmountConsumption(event.target.value);
     handleFieldChange(field_name, {
       amount: event.target.value,
-      unit: unit.id,
       time_unit: selectedTimeUnit.id,
     });
   };

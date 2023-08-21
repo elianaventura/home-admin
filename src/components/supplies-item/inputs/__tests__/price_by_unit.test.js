@@ -78,7 +78,6 @@ describe('PriceByUnit', () => {
       {
         amount: props.amount,
         currency: 'USD',
-        unit: 'KG',
       },
     );
   });
@@ -100,7 +99,6 @@ describe('PriceByUnit', () => {
       {
         amount: '180',
         currency: 'ARS',
-        unit: 'KG',
       },
     );
   });
