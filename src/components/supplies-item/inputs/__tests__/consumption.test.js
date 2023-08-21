@@ -33,7 +33,7 @@ const unit = {
   },
 };
 
-describe('First', () => {
+describe('Consumption', () => {
   it('renders passes test', () => {
     const { container } = render(
       <SuppliesItemProvider value={unit}>
@@ -44,7 +44,7 @@ describe('First', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('text is present', () => {
+  it('title is present', () => {
     const { getByText } = render(
       <SuppliesItemProvider value={unit}>
         <Consuption {...props} />
