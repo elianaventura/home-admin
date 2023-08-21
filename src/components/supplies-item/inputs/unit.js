@@ -14,12 +14,10 @@ export default function Unit({ title, options, field_name, handleFieldChange }) 
   const { setUnit } = useContext(SuppliesItemContext);
 
   const handleUnitChange = (event) => {
-    if (event && event.target && event.target.value) {
-      const newSelectedUnit = options.find(un => event.target.value === un.id);
-      setSelectedUnit(newSelectedUnit);
-      setUnit(newSelectedUnit);
-      handleFieldChange(field_name, newSelectedUnit.id);
-    }
+    const newSelectedUnit = options.find(un => event.target.value === un.id);
+    setSelectedUnit(newSelectedUnit);
+    setUnit(newSelectedUnit);
+    handleFieldChange(field_name, newSelectedUnit.id);
   };
 
   return (

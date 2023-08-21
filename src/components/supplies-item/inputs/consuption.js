@@ -24,26 +24,22 @@ export default function Consuption({ title, amount, time_units, field_name, hand
   }, [unit]);
 
   const handleTimeUnitChange = (event) => {
-    if (event && event.target && event.target.value) {
-      const newSelectedTimeUnit = time_units.find(un => event.target.value === un.id);
-      setSelectedTimeUnit(newSelectedTimeUnit);
-      handleFieldChange(field_name, {
-        amount: amountConsumption,
-        unit: unit.id,
-        time_unit: newSelectedTimeUnit.id,
-      });
-    }
+    const newSelectedTimeUnit = time_units.find(un => event.target.value === un.id);
+    setSelectedTimeUnit(newSelectedTimeUnit);
+    handleFieldChange(field_name, {
+      amount: amountConsumption,
+      unit: unit.id,
+      time_unit: newSelectedTimeUnit.id,
+    });
   };
 
   const handleAmountChange = (event) => {
-    if (event && event.target && event.target.value) {
-      setAmountConsumption(event.target.value);
-      handleFieldChange(field_name, {
-        amount: event.target.value,
-        unit: unit.id,
-        time_unit: selectedTimeUnit.id,
-      });
-    }
+    setAmountConsumption(event.target.value);
+    handleFieldChange(field_name, {
+      amount: event.target.value,
+      unit: unit.id,
+      time_unit: selectedTimeUnit.id,
+    });
   };
 
   return (
