@@ -10,6 +10,11 @@ const renderTimeUnit = (unit, index) => (
   <MenuItem className={unitStyles['unit-option']} key={index} value={unit.id}>{unit.display}</MenuItem>
 );
 
+const renderUnitsText = (amount, display) => {
+  const text = amount == 1 ? display.singular : display.plural;
+  return <span>{text}</span>;
+};
+
 export default function Consuption({ title, amount, time_units, field_name, handleFieldChange }) {
   const [selectedTimeUnit, setSelectedTimeUnit] = useState(time_units.find(un => un.selected));
   const { unit } = useContext(SuppliesItemContext);
@@ -55,7 +60,7 @@ export default function Consuption({ title, amount, time_units, field_name, hand
         {time_units.map((un, index) => renderTimeUnit(un, index))}
       </Select>
       <input data-testid="amount-input" className={consumptionStyles['amount-input']} value={amountConsumption} onChange={handleAmountChange} />
-      <span>{unit.display.singular}</span>
+      {renderUnitsText(amountConsumption, unit.display)}
     </>
   );
 };
