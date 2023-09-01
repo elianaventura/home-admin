@@ -58,6 +58,12 @@ exports[`PriceByUnit render passes snapshot 1`] = `
       data-testid="price-amount-input"
       value="100"
     />
+    <span>
+      por
+    </span>
+    <span>
+      kg
+    </span>
   </div>
 </div>
 `;
