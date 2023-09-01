@@ -1,6 +1,26 @@
-export default function Stock({ title, field_name, handleFieldChange }) {
+import { useContext, useState } from "react";
+import styles from "./stock.module.scss";
+import SuppliesItemContext from "@/components/context/supplies-item";
+
+const renderUnitsText = (amount, display) => {
+  const text = amount == 1 ? display.singular : display.plural;
+  return <span>{text}</span>;
+};
+
+export default function Stock({ title, number, field_name, handleFieldChange }) { 
+  const [stock, setStock] = useState(number);
+  const { unit } = useContext(SuppliesItemContext);
+
+  const handleChange = (event) => {
+    setStock(event.target.value);
+    handleFieldChange(field_name, event.target.value);
+  };
+
   return (
     <div>
-      {title}: hay x unidades
-    </div>);
+      <span className={styles['stock-title']}>{title}</span>
+      <input data-testid="stock-input" className={styles['stock-input']} value={stock} onChange={handleChange} />
+      {renderUnitsText(stock, unit.display)}
+    </div>
+  );
 }
