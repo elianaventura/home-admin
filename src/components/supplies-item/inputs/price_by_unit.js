@@ -45,5 +45,7 @@ export default function PriceByUnit({ title, amount, currency, text_by, field_na
         {currency.options.map((curr, index) => renderCurrency(curr, index))}
       </Select>
       <input data-testid="price-amount-input" className={styles['amount-input']} value={price} onChange={handlePriceChange} />
+      <span>{text_by}</span>
+      <span>{unit.display.singular}</span>
     </div>);
 }

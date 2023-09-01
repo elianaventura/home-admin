@@ -8,6 +8,7 @@ const props = {
   field_name: 'price_per_unit',
   title: 'Precio',
   amount: 100,
+  text_by: 'por',
   currency: {
     currency_selected_label: 'Moneda',
     options: [
@@ -54,6 +55,26 @@ describe('PriceByUnit', () => {
     );
  
     expect(getByText('$')).toBeInTheDocument();
+  });
+
+  it('unit selected is rendered', () => {
+    const { getByText } = render(
+      <SuppliesItemProvider value={unit}>
+        <PriceByUnit {...props} />
+      </SuppliesItemProvider>
+    );
+ 
+    expect(getByText(unit.display.singular)).toBeInTheDocument();
+  });
+
+  it('text by is rendered', () => {
+    const { getByText } = render(
+      <SuppliesItemProvider value={unit}>
+        <PriceByUnit {...props} />
+      </SuppliesItemProvider>
+    );
+ 
+    expect(getByText(props.text_by)).toBeInTheDocument();
   });
 
   it('should change currency', async () => {
