@@ -199,6 +199,7 @@
 								},
 								{
 									"type": "stock",
+									"field_name": "stock",
 									"amount": 0.0,
 									"title": "Stock:"
 								},
