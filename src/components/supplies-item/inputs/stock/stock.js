@@ -7,7 +7,7 @@ const renderUnitsText = (amount, display) => {
   return <span>{text}</span>;
 };
 
-export default function Stock({ title, amount, field_name, handleFieldChange }) { 
+export default function Stock({ title, amount, stock_details, field_name, handleFieldChange }) { 
   const [stock, setStock] = useState(amount);
   const { unit } = useContext(SuppliesItemContext);
 

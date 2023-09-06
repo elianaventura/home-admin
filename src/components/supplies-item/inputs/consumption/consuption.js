@@ -3,7 +3,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import SuppliesItemContext from "@/components/context/supplies-item";
 
-import unitStyles from './unit.module.scss';
+import unitStyles from '../unit/unit.module.scss';
 import consumptionStyles from './consumption.module.scss';
 
 const renderTimeUnit = (unit, index) => (
