@@ -345,6 +345,10 @@
 											{
 												"id": "brand",
 												"display": "Marca"
+											},
+											{
+												"id": "actions",
+												"display": "Acciones"
 											}
 										],
 										"items": [
@@ -354,7 +358,13 @@
 												"brand": {
 													"id": "BR01",
 													"name": "La Serenisima"
-												}
+												},
+												"actions": [
+													{
+														"id": "stock_item_edit",
+														"display": "Editar"
+													}
+												]
 											}
 										]
 									}
