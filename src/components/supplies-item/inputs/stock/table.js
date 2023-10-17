@@ -2,6 +2,7 @@ import { Modal, Paper, Table, TableBody, TableCell, TableContainer, TableHead, T
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from "react";
 import styles from "./stock.module.scss";
+import Autoselect from "@/components/common/autoselect";
 
 const mapDetails = (items) => {
   return (
@@ -22,14 +23,8 @@ export default function StockTable({ columns, items, onChangeDetails }) {
   const handleItemEditOpen = () => setItemEditOpen(true);
   const handleItemEditClose = () => setItemEditOpen(false);
 
-  const onChangeItemBrand = (e) => {
-    if (itemOnEdition.brand) {
-      itemOnEdition.brand.name = e.target.value;
-    } else {
-      itemOnEdition.brand = {
-        name: e.target.value,
-      }
-    }
+  const onChangeItemBrand = (newBrand) => {
+    itemOnEdition.brand = newBrand;
     onChangeDetails(details);
   };
 
@@ -86,12 +81,7 @@ export default function StockTable({ columns, items, onChangeDetails }) {
             <div className={styles['item-edit-modal']}>
               <div>
                 <span className={styles['item-brand-change-text']}>Marca:</span>
-                <input
-                  className={styles['item-brand-change-input']}
-                  type="text"
-                  value={itemOnEdition.brand && itemOnEdition.brand.name}
-                  onChange={onChangeItemBrand}
-                />
+                <Autoselect selected={itemOnEdition.brand} onChange={onChangeItemBrand} />
               </div>
             </div>
           </Modal>

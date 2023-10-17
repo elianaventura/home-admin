@@ -114,6 +114,12 @@
 			"title": "Mis compras",
 			"vertical_id": "SUPPLIES",
 			"selected_tab": 0,
+			"brands": [
+				{
+					"id": "BR01",
+					"name": "La Serenisima"
+				}
+			],
 			"tabs": [
 				{
 					"type": "ITEMS_LIST",
