@@ -68,7 +68,11 @@ export default function Autoselect({ selected, onChange }) {
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys
-      renderOption={(props, option) => <li {...props} key={option.id || `option_${brands.length}`}>{option.name}</li>}
+      renderOption={(props, option) => {
+        return (
+          <li {...props} key={props.id || option.id || `option_${Date.now()}`}>{option.name}</li>
+        );
+      }}
       sx={{ width: 300 }}
       freeSolo
       renderInput={(params) => <TextField {...params} />}
