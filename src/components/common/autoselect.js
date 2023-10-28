@@ -23,13 +23,10 @@ export default function Autoselect({ selected, onChange }) {
       onChange={(event, newValue) => {
         let selection = value;
         if (typeof newValue === 'string') {
-          // timeout to avoid instant validation of the dialog's form.
-          setTimeout(() => {
-            selection = {
-              name: newValue,
-            };
-            handleSubmit(selection);
-          });
+          selection = {
+            name: newValue,
+          };
+          handleSubmit(selection);
         } else if (newValue && newValue.inputValue) {
           selection = {
             name: newValue.inputValue,
