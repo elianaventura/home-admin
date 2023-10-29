@@ -17,7 +17,7 @@ const mapDetails = (items) => {
 };
 
 export default function StockTable({ columns, items, onChangeDetails }) {
-  const [details, setDetails] = useState(mapDetails(items));
+  const [details, setDetails] = useState(items);
   const [itemEditOpen, setItemEditOpen] = useState(false);
   const [itemOnEdition, setItemOnEdition] = useState();
   const handleItemEditOpen = () => setItemEditOpen(true);
@@ -25,7 +25,8 @@ export default function StockTable({ columns, items, onChangeDetails }) {
 
   const onChangeItemBrand = (newBrand) => {
     itemOnEdition.brand = newBrand;
-    onChangeDetails(details);
+    setDetails([...details]);
+    onChangeDetails([...details]);
   };
 
   const openStockItemEdit = (item) => {
@@ -56,7 +57,7 @@ export default function StockTable({ columns, items, onChangeDetails }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {items.map((item, index) => (
+            {details.map((item, index) => (
               <TableRow
                 key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
