@@ -10,12 +10,8 @@ export default function Autoselect({ selected, onChange }) {
   const { brands, setBrands } = useContext(BrandsContext);
 
   const handleSubmit = (newValue) => {
-    const valueWithId =  {
-      id: `${Date.now()}_new`,
-      name: newValue.name,
-    };
-    setValue(valueWithId);
-    setBrands([...brands, valueWithId]);
+    setValue(newValue);
+    setBrands([...brands, newValue]);
   };
 
   return (
@@ -23,13 +19,16 @@ export default function Autoselect({ selected, onChange }) {
       value={value}
       onChange={(event, newValue) => {
         let selection = value;
+        const newId = `${Date.now()}_new`;
         if (typeof newValue === 'string') {
           selection = {
+            id: newId,
             name: newValue,
           };
           handleSubmit(selection);
         } else if (newValue && newValue.inputValue) {
           selection = {
+            id: newId,
             name: newValue.inputValue,
           };
           handleSubmit(selection);
