@@ -18,17 +18,20 @@ export default function Autoselect({ selected, onChange }) {
     <Autocomplete
       value={value}
       onChange={(event, newValue) => {
+        if (!newValue) {
+          return;
+        }
         let selection = value;
-        const newId = `${Date.now()}_new`;
+        const id = newValue.id || `${Date.now()}_new`;
         if (typeof newValue === 'string') {
           selection = {
-            id: newId,
+            id,
             name: newValue,
           };
           handleSubmit(selection);
         } else if (newValue && newValue.inputValue) {
           selection = {
-            id: newId,
+            id,
             name: newValue.inputValue,
           };
           handleSubmit(selection);
