@@ -1,17 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
-import BrandsContext from '../context/brands';
 
 const filter = createFilterOptions();
 
-export default function Autoselect({ selected, onChange }) {
+export default function Autoselect({ selected, onChange, allOptions, setAllOptions }) {
   const [value, setValue] = useState(selected);
-  const { brands, setBrands } = useContext(BrandsContext);
 
   const handleSubmit = (newValue) => {
     setValue(newValue);
-    setBrands([...brands, newValue]);
+    setAllOptions([...allOptions, newValue]);
   };
 
   return (
@@ -54,7 +52,7 @@ export default function Autoselect({ selected, onChange }) {
         return filtered;
       }}
       id="free-solo-dialog-demo"
-      options={brands}
+      options={allOptions}
       getOptionLabel={(option) => {
         // e.g. value selected with enter, right from the input
         if (typeof option === 'string') {

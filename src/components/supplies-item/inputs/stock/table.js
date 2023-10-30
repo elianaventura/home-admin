@@ -1,25 +1,15 @@
 import { Modal, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./stock.module.scss";
 import Autoselect from "@/components/common/autoselect";
-
-const mapDetails = (items) => {
-  return (
-    items.map(({ id, expiration_date, brand }) => (
-      {
-        id,
-        expiration_date,
-        brand,
-      }
-    ))
-  );
-};
+import BrandsContext from "@/components/context/brands";
 
 export default function StockTable({ columns, items, onChangeDetails }) {
   const [details, setDetails] = useState(items);
   const [itemEditOpen, setItemEditOpen] = useState(false);
   const [itemOnEdition, setItemOnEdition] = useState();
+  const { brands, setBrands } = useContext(BrandsContext);
   const handleItemEditOpen = () => setItemEditOpen(true);
   const handleItemEditClose = () => setItemEditOpen(false);
 
@@ -82,7 +72,12 @@ export default function StockTable({ columns, items, onChangeDetails }) {
             <div className={styles['item-edit-modal']}>
               <div>
                 <span className={styles['item-brand-change-text']}>Marca:</span>
-                <Autoselect selected={itemOnEdition.brand} onChange={onChangeItemBrand} />
+                <Autoselect
+                  selected={itemOnEdition.brand}
+                  onChange={onChangeItemBrand}
+                  allOptions={brands}
+                  setAllOptions={setBrands}
+                />
               </div>
             </div>
           </Modal>
