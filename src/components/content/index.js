@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import factoryFrom from '../factory/factory-from';
 import contentComponents from '../factory/content/components';
 const ContentComponent = factoryFrom(contentComponents);
+import { BrandsProvider } from '../context/brands';
 
 const renderTab = ({ id, title }, index) => {
   return (
@@ -23,20 +24,22 @@ const renderTabContent = (props, selectedTab, index) => {
   return <ContentComponent key={index} {...props} />;
 };
 
-export default function Content({ tabs, vertical_id, selected_tab, title }) {
+export default function Content({ tabs, vertical_id, selected_tab, title, brands }) {
   const [selectedTab, setSelectedTab] = useState(selected_tab);
   const handleTabChange = (event, value) => {
     setSelectedTab(value);
   };
 
   return (
-    <Box>
-      <Tabs value={selectedTab} onChange={handleTabChange} aria-label={title}>
-        {tabs.map((tab, index) => renderTab(tab, index))}
-      </Tabs>
+    <BrandsProvider value={brands}>
       <Box>
-        {tabs.map((tab, index) => renderTabContent(tab, selectedTab, index))}
+        <Tabs value={selectedTab} onChange={handleTabChange} aria-label={title}>
+          {tabs.map((tab, index) => renderTab(tab, index))}
+        </Tabs>
+        <Box>
+          {tabs.map((tab, index) => renderTabContent(tab, selectedTab, index))}
+        </Box>
       </Box>
-    </Box>
+    </BrandsProvider>
   );
 };

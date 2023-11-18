@@ -114,6 +114,12 @@
 			"title": "Mis compras",
 			"vertical_id": "SUPPLIES",
 			"selected_tab": 0,
+			"brands": [
+				{
+					"id": "BR01",
+					"name": "La Serenisima"
+				}
+			],
 			"tabs": [
 				{
 					"type": "ITEMS_LIST",
@@ -199,6 +205,7 @@
 								},
 								{
 									"type": "stock",
+									"field_name": "stock",
 									"amount": 0.0,
 									"title": "Stock:"
 								},
@@ -344,6 +351,10 @@
 											{
 												"id": "brand",
 												"display": "Marca"
+											},
+											{
+												"id": "actions",
+												"display": "Acciones"
 											}
 										],
 										"items": [
@@ -353,7 +364,13 @@
 												"brand": {
 													"id": "BR01",
 													"name": "La Serenisima"
-												}
+												},
+												"actions": [
+													{
+														"id": "stock_item_edit",
+														"display": "Editar"
+													}
+												]
 											}
 										]
 									}

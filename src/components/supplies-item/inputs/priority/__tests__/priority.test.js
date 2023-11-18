@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import Priority from '../priority';
 import userEvent from '@testing-library/user-event';
-import { screen } from '@testing-library/dom';
 
 const props = {
   type: 'priority',
@@ -11,7 +10,7 @@ const props = {
   handleFieldChange: jest.fn(),
 };
 
-describe('Unit', () => {
+describe('Priority', () => {
   it('render passes snapshot', () => {
     const { container } = render(
       <Priority {...props} />
