@@ -5,7 +5,7 @@ import styles from './map.module.scss';
 import dynamic from 'next/dynamic';
 
 const DynamicLocationMarker = dynamic(
-  async () => (await import('@/components/common/lazy-map-components')).LocationMarker,
+  async () => (await import('@/components/common/lazy-map-components')).LocationMarkers,
   {
     ssr: false,
   }

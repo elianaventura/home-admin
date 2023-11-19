@@ -2,13 +2,6 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 
-// const useMapEvents = dynamic(
-//   async () => (await import('react-leaflet')).useMapEvents,
-//   {
-//     ssr: false,
-//   }
-// );
-
 export const DynamicMapContainer = dynamic(
   async () => (await import('react-leaflet')).MapContainer,
   {
@@ -37,23 +30,23 @@ export const DynamicPopup = dynamic(
   }
 );
 
-export const LocationMarker = () => {
-  const [position, setPosition] = useState(null);
+export const LocationMarkers = () => {
+  const [markers, setMarkers] = useState([]);
 
-  const map = useMapEvents({
-    click: () => {
-      console.log('locate');
-      map.locate();
-    },
-    locationfound: (e) => {
-      setPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
+  useMapEvents({
+    click: (e) => {
+      setMarkers([
+        ...markers,
+        {
+          position: e.latlng,
+        },
+      ]);
     },
   });
 
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
+  return markers.map((marker, index) => (
+    <Marker key={`marker_${index}`} position={marker.position}>
+      <Popup>New place!</Popup>
     </Marker>
-  );
+  ));
 }
