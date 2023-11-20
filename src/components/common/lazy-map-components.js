@@ -51,8 +51,14 @@ export const LocationMarkers = () => {
     },
   });
 
+  const markerHandlers = {
+    click: (e) => {
+      setMarkers(markers.filter(marker => marker.position !== e.latlng));
+    }
+  };
+
   return markers.map((marker, index) => (
-    <Marker key={`marker_${index}`} position={marker.position} icon={marker.icon}>
+    <Marker key={`marker_${index}`} position={marker.position} icon={marker.icon} eventHandlers={markerHandlers}>
       <Popup>New place!</Popup>
     </Marker>
   ));
