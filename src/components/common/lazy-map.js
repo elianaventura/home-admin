@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DynamicMapContainer, DynamicTileLayer, DynamicMarker, DynamicPopup } from '../common/lazy-map-components';
+import { DynamicMapContainer, DynamicTileLayer } from '../common/lazy-map-components';
 import 'leaflet/dist/leaflet.css';
 import styles from './map.module.scss';
 import dynamic from 'next/dynamic';
