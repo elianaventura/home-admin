@@ -120,6 +120,27 @@
 					"name": "La Serenisima"
 				}
 			],
+			"shopping_places": [
+				{
+					"id": "PL01",
+					"name": "Coto San Juan San Cristobal",
+					"location": {
+						"lat": "-34.623244299999996",
+						"lon": "58.395732173166415"
+					},
+					"web_site": "www.coto.com.ar",
+					"available_days": [
+						{
+							"id": "MON",
+							"display": "LUN"
+						},
+						{
+							"id": "WED",
+							"display": "MIE"
+						}
+					]
+				}
+			],
 			"tabs": [
 				{
 					"type": "ITEMS_LIST",
@@ -210,21 +231,13 @@
 									"title": "Stock:"
 								},
 								{
-									"type": "shopping_places",
-									"field_name": "shopping_places",
-									"title": "Dónde comprar:",
-									"places_list": [
+									"type": "item_price_by_place",
+									"field_name": "item_price_by_place",
+									"title": "Precio por negocio",
+									"prices_list": [
 										{
 											"id": "PL01",
 											"name": "Coto",
-											"web_site": null,
-											"address": {
-												"verbose": "Av. San Juan 1234, Capital Federal",
-												"coordinates": {
-													"lat": -34.615387,
-													"long": -58.383117
-												}
-											},
 											"item_price": {
 												"amount": 100,
 												"currencies": [
@@ -236,17 +249,7 @@
 														"id": "USD"
 													}
 												]
-											},
-											"available_days": [
-												{
-													"id": "MON",
-													"display": "LUN"
-												},
-												{
-													"id": "WED",
-													"display": "MIE"
-												}
-											]
+											}
 										}
 									]
 								}
@@ -376,21 +379,13 @@
 									}
 								},
 								{
-									"type": "shopping_places",
-									"field_name": "shopping_places",
-									"title": "Dónde comprar",
-									"places_list": [
+									"type": "item_price_by_place",
+									"field_name": "item_price_by_place",
+									"title": "Precio por negocio",
+									"prices_list": [
 										{
 											"id": "PL01",
 											"name": "Coto",
-											"web_site": null,
-											"address": {
-												"verbose": "Av. San Juan 1234, Capital Federal",
-												"coordinates": {
-													"lat": -34.615387,
-													"long": -58.383117
-												}
-											},
 											"item_price": {
 												"amount": 100,
 												"currencies": [
@@ -402,17 +397,7 @@
 														"id": "USD"
 													}
 												]
-											},
-											"available_days": [
-												{
-													"id": "MON",
-													"display": "LUN"
-												},
-												{
-													"id": "WED",
-													"display": "MIE"
-												}
-											]
+											}
 										}
 									]
 								}
