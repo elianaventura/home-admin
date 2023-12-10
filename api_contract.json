@@ -238,6 +238,9 @@
 										{
 											"id": "PL01",
 											"name": "Coto",
+											"shop_details": {
+												"text": "Ver detalles del negocio"
+											},
 											"item_price": {
 												"amount": 100,
 												"currencies": [
@@ -386,6 +389,9 @@
 										{
 											"id": "PL01",
 											"name": "Coto",
+											"shop_details": {
+												"text": "Ver detalles del negocio"
+											},
 											"item_price": {
 												"amount": 100,
 												"currencies": [
