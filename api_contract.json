@@ -234,6 +234,9 @@
 									"type": "item_price_by_place",
 									"field_name": "item_price_by_place",
 									"title": "Precio por negocio",
+									"add_price_action": {
+										"text": "Agregar precio de negocio"
+									},
 									"prices_list": [
 										{
 											"id": "PL01",
@@ -385,6 +388,9 @@
 									"type": "item_price_by_place",
 									"field_name": "item_price_by_place",
 									"title": "Precio por negocio",
+									"add_price_action": {
+										"text": "Agregar precio de negocio"
+									},
 									"prices_list": [
 										{
 											"id": "PL01",
