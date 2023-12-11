@@ -4,7 +4,13 @@ import Priority from "@/components/supplies-item/inputs/priority/priority";
 import ShoppingPlaces from "@/components/supplies-item/inputs/shopping_places";
 import Stock from "@/components/supplies-item/inputs/stock/stock";
 import Unit from "@/components/supplies-item/inputs/unit/unit";
-import PriceByPlace from "@/components/supplies-item/inputs/price_by_place/item-price-by-place";
+import dynamic from "next/dynamic";
+const DynamicPriceByPlace = dynamic(
+  async () => (await import('@/components/supplies-item/inputs/price_by_place/item-price-by-place')),
+  {
+    ssr: false,
+  }
+)
 
 const sources = {
   'consumption_by_time': Consuption,
@@ -13,7 +19,7 @@ const sources = {
   'shopping_places': ShoppingPlaces,
   'stock': Stock,
   'unit': Unit,
-  'item_price_by_place': PriceByPlace,
+  'item_price_by_place': DynamicPriceByPlace,
 };
 
 export default sources;
