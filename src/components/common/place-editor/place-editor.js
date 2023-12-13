@@ -2,8 +2,8 @@ import { useState } from "react"
 import DynamicMap from "../lazy-map";
 
 export default function PlaceEditor ({})  {
-  const [name, setName] = useState();
-  const [address, setAddress] = useState();
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
   const [placeCoordinates, setPlaceCoordinates] = useState(null);
 
   const onChangeAddress = (addr) => {
