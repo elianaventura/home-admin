@@ -1,6 +1,6 @@
 class Service {
   static getCoordinates() {
-    return fetch('/places');
+    return fetch('/api/places');
   }
 }
 

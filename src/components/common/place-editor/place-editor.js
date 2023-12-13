@@ -1,13 +1,17 @@
 import { useState } from "react"
 import DynamicMap from "../lazy-map";
+import Service from "@/clientService/placesClient";
 
 export default function PlaceEditor ({})  {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [placeCoordinates, setPlaceCoordinates] = useState(null);
 
-  const onChangeAddress = (addr) => {
+  const onChangeAddress = async (addr) => {
     setAddress(addr);
+    const coords = await Service.getCoordinates();
+    const coordsJson = await coords.json();
+    console.log(JSON.stringify(coordsJson));
   };
 
   return (
