@@ -12,9 +12,9 @@ export default function PlaceEditor ({})  {
   };
 
   const onSubmitAddress = async () => {
-    const coords = await Service.getCoordinates(address);
-    const coordsJson = await coords.json();
-    console.log(JSON.stringify(coordsJson));
+    const fullAddress = await Service.getCoordinates(address); // probar con 'coto san juan san cristobal'
+    const fullAddressJson = await fullAddress.json();
+    console.log(fullAddressJson.data[0]);
   }
 
   return (

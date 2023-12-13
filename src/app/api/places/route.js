@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 export async function GET(request) {
-  const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=${request.q}`, {
+  const params = request.nextUrl.searchParams;
+  const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=${params.get('q')}`, {
     headers: {
       'Content-Type': 'application/json',
       // 'API-Key': process.env.DATA_API_KEY,
