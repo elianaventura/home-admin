@@ -7,17 +7,20 @@ export default function PlaceEditor ({})  {
   const [address, setAddress] = useState('');
   const [placeCoordinates, setPlaceCoordinates] = useState(null);
 
-  const onChangeAddress = async (addr) => {
+  const onChangeAddress = (addr) => {
     setAddress(addr);
-    const coords = await Service.getCoordinates();
+  };
+
+  const onSubmitAddress = async () => {
+    const coords = await Service.getCoordinates(address);
     const coordsJson = await coords.json();
     console.log(JSON.stringify(coordsJson));
-  };
+  }
 
   return (
     <>
       <span>Nombre</span><input type="text" value={name} onChange={(e) => setName(e.target.value)} />;
-      <span>Dirección</span><input type="text" value={address} onChange={(e) => onChangeAddress(e.target.value)} />;
+      <span>Dirección</span><input type="text" value={address} onChange={(e) => onChangeAddress(e.target.value)} /><button onClick={onSubmitAddress}>CONFIRMAR</button>;
       {placeCoordinates && <DynamicMap />}
     </>)
 }

@@ -1,6 +1,6 @@
 class Service {
-  static getCoordinates() {
-    return fetch('/api/places');
+  static getCoordinates(address) {
+    return fetch(`/api/places?q=${encodeURIComponent(address)}`);
   }
 }
 
