@@ -11,7 +11,7 @@ const DynamicLocationMarker = dynamic(
   }
 );
 
-export default function DynamicMap() {
+export default function DynamicMap({ markedPlaces, center }) {
   const [showMap, setShowMap] = useState(false);
   useEffect(() => {
     setShowMap(true);
@@ -21,7 +21,7 @@ export default function DynamicMap() {
     <div style={{ maxWidth:"500px", maxHeight: "500px" }}>
       {showMap && (
         <DynamicMapContainer
-          center={{ lat: 51.505, lng: -0.09 }}
+          center={center || { lat: 51.505, lng: -0.09 }}
           zoom={13}
           scrollWheelZoom={false}
           className={styles['map-container']}>
@@ -29,7 +29,7 @@ export default function DynamicMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <DynamicLocationMarker />
+          <DynamicLocationMarker marked={markedPlaces} />
         </DynamicMapContainer>
       )}
     </div>);

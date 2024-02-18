@@ -31,13 +31,15 @@ export const DynamicPopup = dynamic(
   }
 );
 
-export const LocationMarkers = () => {
-  const [markers, setMarkers] = useState([]);
-
+export const LocationMarkers = ({ marked }) => {
   let defaultIcon = L.icon({
     iconUrl: '/images/marker-icon.png',
     shadowUrl: '/images/marker-shadow.png'
   });
+
+  const markedInitial = (marked || []).map(loc => ({ ...loc, icon: defaultIcon }));
+
+  const [markers, setMarkers] = useState(markedInitial);
 
   useMapEvents({
     click: (e) => {

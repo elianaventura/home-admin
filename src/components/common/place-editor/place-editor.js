@@ -14,14 +14,14 @@ export default function PlaceEditor ({})  {
   const onSubmitAddress = async () => {
     const fullAddress = await Service.getCoordinates(address); // probar con 'coto san juan san cristobal'
     const fullAddressJson = await fullAddress.json();
-    console.log(fullAddressJson.data[0]);
+    setPlaceCoordinates({ lat: parseFloat(fullAddressJson.data[0].lat), lng: parseFloat(fullAddressJson.data[0].lon) });
   }
 
   return (
     <>
       <span>Nombre</span><input type="text" value={name} onChange={(e) => setName(e.target.value)} />;
       <span>Dirección</span><input type="text" value={address} onChange={(e) => onChangeAddress(e.target.value)} /><button onClick={onSubmitAddress}>CONFIRMAR</button>;
-      {placeCoordinates && <DynamicMap />}
+      {placeCoordinates && <DynamicMap markedPlaces={[{ position: placeCoordinates }]} center={placeCoordinates} />}
     </>)
 }
 
