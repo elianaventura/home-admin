@@ -239,8 +239,8 @@
 									},
 									"prices_list": [
 										{
-											"id": "PL01",
-											"name": "Coto",
+											"place_id": "PL01",
+											"place_name": "Coto",
 											"shop_details": {
 												"text": "Ver detalles del negocio"
 											},
@@ -351,7 +351,7 @@
 										"columns": [
 											{
 												"id": "id",
-												"display": "ID"
+												"display": "ID unidad"
 											},
 											{
 												"id": "expiration_date",
@@ -368,7 +368,7 @@
 										],
 										"items": [
 											{
-												"id": "IT1_U1",
+												"unit_id": "IT1_U1",
 												"expiration_date": "22-04-2023",
 												"brand": {
 													"id": "BR01",
@@ -393,8 +393,8 @@
 									},
 									"prices_list": [
 										{
-											"id": "PL01",
-											"name": "Coto",
+											"place_id": "PL01",
+											"place_name": "Coto",
 											"shop_details": {
 												"text": "Ver detalles del negocio"
 											},

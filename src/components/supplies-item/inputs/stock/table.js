@@ -52,7 +52,7 @@ export default function StockTable({ columns, items, onChangeDetails }) {
                 key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell>{item.id}</TableCell>
+                <TableCell>{item.unit_id}</TableCell>
                 <TableCell>{item.expiration_date}</TableCell>
                 <TableCell>{item.brand.name}</TableCell>
                 <TableCell>{item.actions.map((action, index) => renderAction(item, action, index))}</TableCell>
